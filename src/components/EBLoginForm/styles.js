@@ -4,37 +4,44 @@ const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
+
     logo: {
-        width: windowWidth * 0.7,
+        width: windowWidth * 0.32,
         height: windowHeight * 0.2,
     },
     logoContainer: {
         alignItems: 'center',
-        marginTop: 10
     },
     item: {
         width: windowWidth * 0.8,
+
     },
     form: {
         alignItems: 'center',
-        marginTop: windowHeight * 0.1
+        justifyContent:'flex-end',
+
+    },
+    NBIcon: {
+        color: 'white',
+        fontSize: 25
     },
     label: {
-        marginTop: -5
+        marginTop: -5,
+        color:'white',
+    },
+    input: {
+      color: 'white',
     },
     buttonContainer: {
-        flex: 0.5,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    socialContainer: {
-      alignItems:'center'
+      alignItems:'center',
+        flex:2,
+
     },
     socialButton: {
-        width: windowWidth * 0.7,
+        width: windowWidth * 0.6,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: windowHeight * 0.009
+        marginTop: windowHeight * 0.02
     },
     socialTextButton: {
         color: 'white',
@@ -42,18 +49,29 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold'
 
     },
-    button: {
+    loginButton: {
         alignItems:'center',
         justifyContent:'center',
-        width: windowWidth * 0.6,
+        width: windowWidth * 0.4,
         borderRadius: 25,
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        marginTop: windowHeight * 0.05,
+
     },
     text: {
         marginLeft: 5,
         color: 'white',
         fontSize: windowWidth * 0.045,
+    },
+   forgottenText: {
+        color:'orange',
+        fontWeight: 'bold',
+        fontSize: 15,
+        marginTop: 20,
+        borderBottomWidth:1,
+       borderBottomColor:'orange'
+    },
+    registrationText: {
+        fontSize: 15
     }
-
-
 });
