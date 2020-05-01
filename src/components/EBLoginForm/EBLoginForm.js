@@ -1,8 +1,6 @@
 import React, { useState }from 'react';
-import { View, Image, ImageBackground, Text } from 'react-native';
-import { Container, Header, Content, Form, Item, Input, Label, Icon as NBIcon, Button } from 'native-base';
-import EBSlider from '../EBSlider/EBSlider';
-import {theme} from '../../utils/colors';
+import { Form, Item, Input, Label, Icon as NBIcon, Button } from 'native-base';
+import * as Animatable from 'react-native-animatable';
 
 import {styles} from './styles';
 
@@ -12,9 +10,12 @@ const EBLoginForm = () => {
     const [isSecure, useSecure] = useState(true);
 
     return (
-        <View style={styles.container}>
-           <EBSlider auto={true} loop={true} dotColor={"#8e8991"} activeDotColor={theme}/>
-
+           <Animatable.View
+               style={{flex: 2}}
+               animation='fadeInUp'
+               duration={1500}
+               easing={'ease-in-out'}
+           >
             <Form style={styles.form}>
                 <Item floatingLabel last style={styles.item}>
                     <NBIcon style={styles.NBIcon} name="person"/>
@@ -39,9 +40,7 @@ const EBLoginForm = () => {
                     />
                 </Item>
             </Form>
-        </View>
-
-
+           </Animatable.View>
     )
 };
 export default EBLoginForm;

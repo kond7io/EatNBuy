@@ -3,14 +3,6 @@ import {windowWidth} from '../../utils/deviceDimension';
 import {theme} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    header: {
-        flex: 2,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
     form: {
         flex: 1,
         backgroundColor: theme,

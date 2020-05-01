@@ -1,11 +1,13 @@
 import { StyleSheet } from 'react-native';
+import {windowHeight} from '../../utils/deviceDimension';
+import {theme} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
     container: {
         flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FFFFFF'
+        backgroundColor: 'white'
     },
     dotStyle: {
       opacity: 0.7,
@@ -19,5 +21,4 @@ export const styles = StyleSheet.create({
         height: 14,
         borderRadius: 7
     },
-
 });

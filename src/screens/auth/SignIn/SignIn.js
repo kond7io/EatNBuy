@@ -1,11 +1,30 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import EBLoginForm from '../../../components/EBLoginForm/EBLoginForm';
+import EBSlider from '../../../components/EBSlider/EBSlider';
+
+import {styles} from '../SignIn/styles';
+import {theme} from '../../../utils/colors';
+import loginImage1 from '../../../img/login/loginImage1.png';
+import loginImage2 from '../../../img/login/loginImage2.png';
+import loginImage3 from '../../../img/login/loginImage3.png';
+import loginImage4 from '../../../img/login/loginImage4.png';
+import loginImage5 from '../../../img/login/loginImage5.png';
 
 const SignIn = () => {
+    const items = [
+        {message: "Sprawdź stan produktów", img: loginImage1},
+        {message: "Stwórz listę zakupów", img: loginImage2},
+        {message: "Dobierz brakujące produkty", img: loginImage3},
+        {message: "Utwórz lub dołącz do grupy", img: loginImage4},
+        {message: "Miej wpływ na statystyki", img: loginImage5}];
+
     return (
-        <EBLoginForm />
+        <View style={styles.container}>
+            <EBSlider auto={true} loop={true} dotColor={"#8e8991"} activeDotColor={theme} items={items} />
+            <EBLoginForm />
+        </View>
 
     )
 };
