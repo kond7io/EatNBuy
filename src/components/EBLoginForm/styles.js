@@ -26,6 +26,10 @@ export const styles = StyleSheet.create({
         color: "white",
         fontSize: 25
     },
+    NBIconOff: {
+        color: "#e9e9e9",
+        fontSize: 25
+    },
     registrationText: {
         fontSize: windowHeight * 0.02,
         color: 'white',
