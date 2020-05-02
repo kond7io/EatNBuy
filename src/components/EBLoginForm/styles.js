@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {windowWidth} from '../../utils/deviceDimension';
+import {windowHeight, windowWidth} from '../../utils/deviceDimension';
 import {theme} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
         borderTopRightRadius: 30,
         paddingVertical: 50,
         paddingHorizontal: 30,
+        alignItems: 'center',
     },
     item: {
         width: windowWidth * 0.8,
@@ -24,6 +25,13 @@ export const styles = StyleSheet.create({
     NBIcon: {
         color: "white",
         fontSize: 25
+    },
+    registrationText: {
+        fontSize: windowHeight * 0.02,
+        color: 'white',
+        borderBottomWidth: 1,
+        borderBottomColor: 'white',
+        marginTop: windowHeight * 0.04,
     },
 
 });

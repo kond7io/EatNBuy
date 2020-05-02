@@ -5,7 +5,6 @@ import { View, ImageBackground, Text } from 'react-native';
 import {styles} from './styles';
 
 const EBSlide = ({image, message}) => {
-    debugger;
     return (
         <View style={styles.slide}>
                 <ImageBackground source={image} style={styles.imageStyle}/>
