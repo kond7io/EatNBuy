@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         borderRadius: 25,
         width: windowWidth * 0.45,
         padding: 5,
-        marginTop: windowHeight * 0.05
+        marginTop: windowHeight * 0.05,
     },
    text: {
        textAlign: 'center',

@@ -1,9 +1,11 @@
-import React, { useState, useEffect }from 'react';
-import { Form, Item, Input, Label, Icon as NBIcon } from 'native-base';
+import React, { useState }from 'react';
+import { Form } from 'native-base';
 import * as Animatable from 'react-native-animatable';
 import EBButton from '../EBButton/EBButton';
 
 import {styles} from './styles';
+import EBInput from '../EBInput/EBInput';
+import {Text} from 'react-native';
 
 const EBLoginForm = () => {
 
@@ -21,35 +23,8 @@ const EBLoginForm = () => {
             onAnimationEnd={() => useAnimation(true)}
         >
              <Form style={styles.form}>
-                 <Item floatingLabel last style={styles.item} >
-                    <NBIcon style={styles.NBIcon} name="person"/>
-                    <Label style={styles.label}>Email</Label>
-                    <Input
-                        disabled={false}
-                        style={styles.input}
-                        onChangeText={text => useEmail(text)}
-                    />
-                </Item>
-                <Item floatingLabel last style={styles.item}>
-                    <NBIcon style={styles.NBIcon} name="keypad"/>
-                    <Label style={styles.label}>Hasło</Label>
-                    <Input
-                        disabled={false}
-                        style={styles.input}
-                        secureTextEntry={isSecure}
-                        onChangeText={text => usePassword(text)}
-                    />
-                    {isSecure ?
-                    <NBIcon
-                        style={styles.NBIconOff}
-                        name="eye-off"
-                        onPress={()=> useSecure(!isSecure)}
-                    /> : <NBIcon
-                            style={styles.NBIcon}
-                            name="eye"
-                            onPress={()=> useSecure(!isSecure)}
-                        />}
-                </Item>
+                 <EBInput  text='Email' icon='at'/>
+                 <EBInput  text='Hasło' icon='keypad' isPassword={true}/>
 
                 <EBButton
                     icon='sign-in'
@@ -57,11 +32,11 @@ const EBLoginForm = () => {
                     animation={isAnimation}
                     onPress={() => alert("Zaloguj")}
                 />
-                 <Label onPres={() => alert("Zarejestruj")}
-                        style={styles.registrationText}>Nie masz jeszcze konta?
-                 </Label>
+                 <Text onPres={() => alert("Zarejestruj")}
+                        style={styles.registrationText}>Nie masz jeszcze konta?</Text>
              </Form>
         </Animatable.View>
     )
 };
+
 export default EBLoginForm;

@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import * as  firebase from "firebase";
 import { createSwitchNavigator} from "react-navigation";
 import SignIn  from './src/screens/auth/SignIn/SignIn';
+import SignUp  from './src/screens/auth/SignUp/SignUp';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCcztTmsnm3MKlJ4Ur_5wXpcR4-P-2w6Pw",
@@ -27,7 +28,7 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={{flex:1}}>
-                <SignIn />
+                <SignUp />
 
             </View>
         )
