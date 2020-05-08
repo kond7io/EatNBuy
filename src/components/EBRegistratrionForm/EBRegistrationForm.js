@@ -1,22 +1,24 @@
-import React, { useState, useEffect }from 'react';
-import {Text, Image, View} from 'react-native';
+import React, { useState }from 'react';
+import {Text } from 'react-native';
 import { Form } from 'native-base';
 import * as Animatable from 'react-native-animatable';
 import EBButton from '../EBButton/EBButton';
 import EBInput from '../EBInput/EBInput';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import EBImagePicker from '../EBImagePicker/EBImagePicker';
 
 import PropTypes from "prop-types";
 import {styles} from './styles';
-import avatar from '../../img/avatar.png';
 
 const EBRegistrationForm = () => {
+
 
     const [email, useEmail] = useState('Login...');
     const [password, usePassword] = useState('Password...');
     const [isSecure, useSecure] = useState(true);
     const [isAnimation, useAnimation] = useState(false);
-    console.disableYellowBox = true;
+
+            console.disableYellowBox = true;
+
     return (
         <Animatable.View
             style={{flex: 2}}
@@ -25,13 +27,7 @@ const EBRegistrationForm = () => {
             easing={'ease-in-out'}
             onAnimationEnd={() => useAnimation(true)}
         >
-            <Text style={{textAlign:'center', fontWeight:'bold'}}>Wybierz zdjęcie</Text>
-            <View style={{ justifyContent:'center',alignItems: 'center', zIndex: 1, flexDirection: 'row', marginBottom: -55}}>
-
-                <Image source={avatar} style={{width: 110, height: 110, borderRadius: 55, borderWidth:3, borderColor: 'white', marginLeft: 25}} />
-                <Icon name={'camera'}  size={15} style={{ color: 'white', borderRadius: 3, marginBottom: -50}} />
-                <Icon name={'plus'}  size={8} style={{ color: 'white', marginLeft:2,borderRadius: 3, marginBottom: -50}} />
-            </View>
+            <EBImagePicker/>
 
             <Form style={[styles.form, {zIndex: 0}]}>
                 <EBInput text='Imię' icon='person'/>

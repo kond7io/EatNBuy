@@ -6,11 +6,11 @@ import EBSlider from '../../../components/EBSlider/EBSlider';
 
 import {styles} from '../SignIn/styles';
 import {theme} from '../../../utils/colors';
-import loginImage1 from '../../../img/login/loginImage1.png';
-import loginImage2 from '../../../img/login/loginImage2.png';
-import loginImage3 from '../../../img/login/loginImage3.png';
-import loginImage4 from '../../../img/login/loginImage4.png';
-import loginImage5 from '../../../img/login/loginImage5.png';
+import loginImage1 from '../../../img/signIn/loginImage1.png';
+import loginImage2 from '../../../img/signIn/loginImage2.png';
+import loginImage3 from '../../../img/signIn/loginImage3.png';
+import loginImage4 from '../../../img/signIn/loginImage4.png';
+import loginImage5 from '../../../img/signIn/loginImage5.png';
 
 const SignIn = () => {
     const items = [
