@@ -1,10 +1,11 @@
-import React, { useState }from 'react';
+import React from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
 import  Icon  from 'react-native-vector-icons/FontAwesome';
 import * as Animatable from 'react-native-animatable';
 
 import {styles} from './styles';
 import {theme} from '../../utils/colors';
+import PropTypes from 'prop-types';
 
 const EBButton = ({title, icon, animation}) => {
     return (
@@ -18,4 +19,11 @@ const EBButton = ({title, icon, animation}) => {
                 : null
     )
 };
+EBButton.propTypes = {
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    animation: PropTypes.string
+};
 export default EBButton;
+
+

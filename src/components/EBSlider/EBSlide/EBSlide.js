@@ -3,6 +3,7 @@ import { View, ImageBackground, Text } from 'react-native';
 
 
 import {styles} from './styles';
+import PropTypes from 'prop-types';
 
 const EBSlide = ({image, message}) => {
     return (
@@ -12,5 +13,9 @@ const EBSlide = ({image, message}) => {
         </View>
 
     )
+};
+EBSlide.propTypes = {
+    image: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
 };
 export default EBSlide;

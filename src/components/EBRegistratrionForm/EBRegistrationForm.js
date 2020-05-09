@@ -21,15 +21,15 @@ const EBRegistrationForm = () => {
 
     return (
         <Animatable.View
-            style={{flex: 2}}
+            style={styles.container}
             animation={'fadeInUp'}
             duration={1500}
             easing={'ease-in-out'}
             onAnimationEnd={() => useAnimation(true)}
         >
-            <EBImagePicker/>
+            <EBImagePicker />
 
-            <Form style={[styles.form, {zIndex: 0}]}>
+            <Form style={styles.form}>
                 <EBInput text='Imię' icon='person'/>
                         <EBInput text='Email' icon='at'/>
                             <EBInput text='Hasło' icon='keypad' isPassword={true}/>

@@ -3,6 +3,10 @@ import {windowHeight, windowWidth} from '../../utils/deviceDimension';
 import {theme} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+        marginTop: windowHeight * 0.08
+    },
     form: {
         flex: 1,
         backgroundColor: theme,
@@ -11,6 +15,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 50,
         paddingHorizontal: 30,
         alignItems: 'center',
+        zIndex: 0
     },
     item: {
         width: windowWidth * 0.8,
@@ -37,5 +42,4 @@ export const styles = StyleSheet.create({
         borderBottomColor: 'white',
         marginTop: windowHeight * 0.02,
     },
-
 });

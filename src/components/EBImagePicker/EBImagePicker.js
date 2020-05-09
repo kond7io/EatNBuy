@@ -21,7 +21,6 @@ const EBImagePicker = () => {
     function _uploadImage ()
     {
         ImagePicker.showImagePicker(options, (response) => {
-            console.log('Response = ', response);
 
             if (response.didCancel) {
                 console.log('User cancelled image picker');
@@ -38,14 +37,14 @@ const EBImagePicker = () => {
 
     return (
         <>
-            <Text style={{textAlign:'center', fontWeight:'bold'}}>Wybierz zdjęcie</Text>
-            <View style={{ justifyContent:'center',alignItems: 'center', zIndex: 1, flexDirection: 'row', marginBottom: -55}}>
+            <Text style={styles.text}>Wybierz zdjęcie</Text>
+            <View style={styles.container}>
 
                 <Image source = {filePath}
-                       style={{width: 110, height: 110, borderRadius: 55, borderWidth:3, borderColor: 'white', marginLeft: 25}}
+                       style={styles.image}
                 />
-                <Icon name={'camera'}  size={15} style={{ color: 'white', borderRadius: 3, marginBottom: -50}} onPress={() => _uploadImage()}/>
-                <Icon name={'plus'}  size={8} style={{ color: 'white', marginLeft:2,borderRadius: 3, marginBottom: -50}} />
+                <Icon name={'camera'}  size={15} style={styles.icon} onPress={() => _uploadImage()}/>
+                <Icon name={'plus'}  size={8} style={[styles.icon, {marginLeft:2}]} />
             </View>
         </>
 
