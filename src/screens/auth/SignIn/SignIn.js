@@ -1,6 +1,5 @@
 import React from 'react';
 import { View } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
 import EBLoginForm from '../../../components/EBLoginForm/EBLoginForm';
 import EBSlider from '../../../components/EBSlider/EBSlider';
 
@@ -22,7 +21,7 @@ const SignIn = () => {
 
     return (
         <View style={styles.container}>
-            <EBSlider auto={true} loop={true} dotColor={"#8e8991"} activeDotColor={theme} items={items} />
+            <EBSlider auto={true} loop={true} buttonsVisible={false} dotVisible={true} dotColor={"#8e8991"} activeDotColor={theme} items={items} />
             <EBLoginForm />
         </View>
 

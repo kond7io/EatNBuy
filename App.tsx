@@ -5,6 +5,7 @@ import * as  firebase from "firebase";
 import { createSwitchNavigator} from "react-navigation";
 import SignIn  from './src/screens/auth/SignIn/SignIn';
 import SignUp  from './src/screens/auth/SignUp/SignUp';
+import GroupScreen  from './src/screens/app/GroupScreen/GroupScreen';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCcztTmsnm3MKlJ4Ur_5wXpcR4-P-2w6Pw",
@@ -28,7 +29,7 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={{flex:1}}>
-                <SignUp />
+                <GroupScreen />
 
             </View>
         )
