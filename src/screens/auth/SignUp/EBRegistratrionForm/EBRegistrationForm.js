@@ -2,9 +2,9 @@ import React, { useState }from 'react';
 import {Text } from 'react-native';
 import { Form } from 'native-base';
 import * as Animatable from 'react-native-animatable';
-import EBButton from '../EBButton/EBButton';
-import EBInput from '../EBInput/EBInput';
-import EBImagePicker from '../EBImagePicker/EBImagePicker';
+import EBButton from '../../../../components/EBButton/EBButton';
+import EBInput from '../../../../components/EBInput/EBInput';
+import EBImagePicker from '../../../../components/EBImagePicker/EBImagePicker';
 
 import PropTypes from "prop-types";
 import {styles} from './styles';

@@ -1,10 +1,10 @@
 import React, { useState }from 'react';
 import { Form } from 'native-base';
 import * as Animatable from 'react-native-animatable';
-import EBButton from '../EBButton/EBButton';
+import EBButton from '../../../../components/EBButton/EBButton';
 
 import {styles} from './styles';
-import EBInput from '../EBInput/EBInput';
+import EBInput from '../../../../components/EBInput/EBInput';
 import {Text} from 'react-native';
 
 const EBLoginForm = () => {

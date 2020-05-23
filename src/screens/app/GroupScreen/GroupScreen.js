@@ -11,8 +11,8 @@ console.disableYellowBox = true;
 
 const GroupScreen = () => {
     const items = [
-        {message: "Stwórz grupę i dodaj użytkowników", img: addImage, optional: "Tekst nr 1.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam. Pellentesque iaculis ornare lorem, at viverra erat fermentum et."},
-        {message: "Dołącz do istniejącej grupy", img: joinImage, optional: "Tekst nr 2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam. Pellentesque iaculis ornare lorem, at viverra erat fermentum et."}];
+        {message: "Stwórz grupę i dodaj użytkowników", img: addImage, optional: "Tekst nr 1.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."},
+        {message: "Dołącz do istniejącej grupy", img: joinImage, optional: "Tekst nr 2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."}];
 
     return (
         <View style={styles.container}>

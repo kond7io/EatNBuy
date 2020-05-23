@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import EBLoginForm from '../../../components/EBLoginForm/EBLoginForm';
+import EBLoginForm from './EBLoginForm/EBLoginForm';
 import EBSlider from '../../../components/EBSlider/EBSlider';
 
 import {styles} from '../SignIn/styles';
