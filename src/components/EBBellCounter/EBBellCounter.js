@@ -11,7 +11,7 @@ const EBBellCounter = ({number}) => {
 
     return (
         <View style={styles.container}>
-            <Icon name='bell' color='white' size={25}/>
+            <Icon name='bell' color='white' size={30}/>
             {number > 0
                 ? <Text style={styles.counter}>{number}</Text>
                 : null

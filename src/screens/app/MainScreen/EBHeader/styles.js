@@ -4,7 +4,7 @@ import {theme} from '../../../../utils/colors';
 
 export const styles = StyleSheet.create({
     header: {
-        flex: 1,
+        flex: 1.3,
     },
     settings: {
         flex:0.5,
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     groupName: {
         fontWeight: 'bold',
         color: theme,
-        fontSize: windowHeight * 0.024,
+        fontSize: windowHeight * 0.03,
         backgroundColor: 'white',
         borderRadius: 15,
         paddingLeft: 5,

@@ -8,13 +8,13 @@ export const styles = StyleSheet.create({
     },
     counter: {
         color: theme,
-        fontSize: windowWidth * 0.03,
+        fontSize: windowWidth * 0.032,
         fontWeight: 'bold',
         backgroundColor: 'white',
         borderRadius: 25,
-        height: windowWidth * 0.04,
-        width: windowWidth * 0.04,
+        height: windowWidth * 0.045,
+        width: windowWidth * 0.045,
         textAlign: 'center',
-        marginLeft: - windowWidth * 0.025
+        marginLeft: - windowWidth * 0.03
     }
 });

@@ -17,7 +17,7 @@ const EBHeader = ({number, groupName}) => {
     return (
         <View style={styles.header}>
             <View style={styles.settings}>
-                <Icon name={'share'}  color='white' size={25}/>
+                <Icon name={'share'}  color='white' size={30}/>
                 <Text style={styles.groupName}>{groupName}</Text>
                 <EBBellCounter number={number} />
             </View>
@@ -25,7 +25,7 @@ const EBHeader = ({number, groupName}) => {
                 <Image source = {avatar}
                        style={styles.image}
                 />
-                <Text style={{color:'white', fontWeight:'bold', fontSize:20, }}>Witaj, {userName}</Text>
+                <Text style={{color:'white', fontSize:25, }}>Witaj, {userName}</Text>
             </View>
         </View>
 
