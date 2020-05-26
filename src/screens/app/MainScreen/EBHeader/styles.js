@@ -4,14 +4,26 @@ import {theme} from '../../../../utils/colors';
 
 export const styles = StyleSheet.create({
     header: {
-        flex: 1.3,
+        flex: 0.7,
+         zIndex:1,
+         elevation:0,
+         position: 'absolute',
+        width: '100%'
+
     },
     settings: {
         flex:0.5,
+        height:50,
         flexDirection: 'row',
-        backgroundColor: theme,
         alignItems: 'center',
         justifyContent: 'space-around',
+
+    },
+    imageBackground: {
+        flex:1,
+        justifyContent:'center',
+        resizeMode: 'cover',
+        zIndex: 10
     },
     groupName: {
         fontWeight: 'bold',
@@ -24,8 +36,7 @@ export const styles = StyleSheet.create({
 
     },
     about: {
-        flex:2,
-        backgroundColor: theme,
+        height:200,
         alignItems: 'center',
         justifyContent: 'space-evenly',
 
@@ -36,7 +47,9 @@ export const styles = StyleSheet.create({
         borderRadius: windowWidth * 0.6,
         borderWidth: 3,
         borderColor: 'white',
-
-
     },
+    welcome: {
+        color:'white',
+        fontSize:25,
+    }
 });
