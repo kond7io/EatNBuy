@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 15,
         paddingLeft: 5,
-        paddingRight: 5
+        paddingRight: 5,
 
     },
     about: {
@@ -47,6 +47,7 @@ export const styles = StyleSheet.create({
         borderRadius: windowWidth * 0.6,
         borderWidth: 3,
         borderColor: 'white',
+
     },
     welcome: {
         color:'white',

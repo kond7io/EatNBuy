@@ -29,7 +29,7 @@ const EBHeader = ({headerY, number, groupName}) => {
                        style={styles.image}
                 />
                 <Text style={styles.welcome}>Witaj, {userName}</Text>
-            </View>
+                </View>
             </ImageBackground>
            <EBListButton/>
 

@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import {windowHeight, windowWidth} from '../../../../../utils/deviceDimension';
+import {theme} from '../../../../../utils/colors';
 
 
 export const styles = StyleSheet.create({
@@ -17,13 +18,23 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         margin: windowWidth * 0.05,
         height: windowHeight * 0.1,
-        backgroundColor: 'white',
+        backgroundColor: theme,
         borderColor: 'black',
-        borderWidth: 2
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 6,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
+
+        elevation: 12,
     },
     text: {
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: 'white',
     },
 
 });
