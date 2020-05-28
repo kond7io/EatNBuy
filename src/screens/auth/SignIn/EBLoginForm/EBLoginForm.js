@@ -13,6 +13,7 @@ const EBLoginForm = () => {
     const [password, usePassword] = useState('Password...');
     const [isSecure, useSecure] = useState(true);
     const [isAnimation, useAnimation] = useState(false);
+
     console.disableYellowBox = true;
     return (
         <Animatable.View
@@ -23,7 +24,7 @@ const EBLoginForm = () => {
             onAnimationEnd={() => useAnimation(true)}
         >
              <Form style={styles.form}>
-                 <EBInput  text='Email' icon='at'/>
+                 <EBInput  text='Email' icon='at' keyboardType={'email-address'}/>
                  <EBInput  text='Hasło' icon='keypad' isPassword={true}/>
 
                 <EBButton

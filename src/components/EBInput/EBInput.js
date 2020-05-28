@@ -4,11 +4,11 @@ import { Item, Input, Label, Icon as NBIcon } from 'native-base';
 import {styles} from './styles';
 import PropTypes from 'prop-types';
 
-const EBInput = ({text, icon, isPassword}) => {
+const EBInput = ({text, icon, isPassword, keyboardType}) => {
 
     const [email, useEmail] = useState('Login...');
     const [password, usePassword] = useState('Password...');
-    const [isSecure, useSecure] = useState(true);
+    const [isSecure, useSecure] = useState(false);
     const [isAnimation, useAnimation] = useState(false);
 
     const _render = () => {
@@ -30,8 +30,9 @@ const EBInput = ({text, icon, isPassword}) => {
                     <Label style={styles.label}>{text}</Label>
                     <Input
                         disabled={false}
+                        keyboardType={keyboardType}
                         style={styles.input}
-                        secureTextEntry={isSecure}
+                        secureTextEntry={isPassword ? !isSecure : isSecure}
                         onChangeText={text => usePassword(text)}
                     />
                     {isPassword

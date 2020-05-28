@@ -30,8 +30,8 @@ const EBRegistrationForm = () => {
             <EBImagePicker />
 
             <Form style={styles.form}>
-                <EBInput text='Imię' icon='person'/>
-                        <EBInput text='Email' icon='at'/>
+                <EBInput text='Imię' icon='person' isPassword={false}/>
+                        <EBInput text='Email' icon='at' keyboardType={'email-address'} isPassword={false}/>
                             <EBInput text='Hasło' icon='keypad' isPassword={true}/>
                                 <EBInput text='Powtórz hasło' icon='keypad' isPassword={true}/>
 
