@@ -7,6 +7,7 @@ import SignIn  from './src/screens/auth/SignIn/SignIn';
 import SignUp  from './src/screens/auth/SignUp/SignUp';
 import GroupScreen  from './src/screens/app/GroupScreen/GroupScreen';
 import MainScreen  from './src/screens/app/MainScreen/MainScreen';
+import ProductMagazine  from './src/screens/app/ProductMagazine/ProductMagazine';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCcztTmsnm3MKlJ4Ur_5wXpcR4-P-2w6Pw",
@@ -30,7 +31,7 @@ export default class App extends React.Component {
     render() {
         return (
             <View style={{flex:1}}>
-                <SignUp />
+                <ProductMagazine />
 
             </View>
         )

@@ -25,7 +25,7 @@ const EBLoginForm = () => {
         >
              <Form style={styles.form}>
                  <EBInput  text='Email' icon='at' keyboardType={'email-address'}/>
-                 <EBInput  text='Hasło' icon='keypad' isPassword={true}/>
+                    <EBInput  text='Hasło' icon='keypad' isPassword={true}/>
 
                 <EBButton
                     icon='sign-in'

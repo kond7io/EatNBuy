@@ -32,7 +32,6 @@ const EBHeader = ({headerY, number, groupName}) => {
                 </View>
             </ImageBackground>
            <EBListButton/>
-
         </Animated.View>
     )
 };
