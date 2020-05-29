@@ -52,5 +52,6 @@ export const styles = StyleSheet.create({
     welcome: {
         color:'white',
         fontSize:25,
+        fontFamily:'Raleway-Medium'
     }
 });

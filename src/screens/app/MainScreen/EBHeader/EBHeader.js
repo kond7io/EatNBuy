@@ -20,7 +20,7 @@ const EBHeader = ({headerY, number, groupName}) => {
         <Animated.View style={[styles.header,{transform: [{translateY: headerY}]}]}>
             <ImageBackground source={back} style={styles.imageBackground}>
             <View style={styles.settings}>
-                <Icon name={'share'}  color='white' size={30}/>
+                <Icon name={'share'}  color='white' size={25}/>
                 <Text style={styles.groupName}>{groupName}</Text>
                 <EBBellCounter number={number} />
             </View>
