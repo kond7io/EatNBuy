@@ -34,8 +34,7 @@ export const styles = StyleSheet.create({
         justifyContent:'flex-start'
     },
     name: {
-        fontSize: windowHeight * 0.027,
-        fontWeight:'bold'
+        fontSize: windowHeight * 0.027
     },
     icon: {
       opacity: 0.5,
