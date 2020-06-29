@@ -8,13 +8,7 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexDirection:'row',
-        // borderBottomWidth: 2,
-        // borderBottomColor: 'black',
-        // borderTopWidth: 2,
-        // borderTopColor: 'black',
-        margin: 5
-
-
+        margin: windowHeight * 0.0075
     },
     image: {
         width: windowHeight * 0.07,
@@ -24,7 +18,21 @@ export const styles = StyleSheet.create({
     info: {
         flexDirection: 'column',
         flex: 3,
-
+    },
+    user: {
+        fontWeight: 'bold',
+        fontSize: windowHeight * 0.0175
+    },
+    date: {
+        marginLeft: windowHeight * 0.0075,
+        marginRight: windowHeight * 0.0075
+    },
+    hour: {
+        marginLeft: windowHeight * 0.0075
+    },
+    iconContainer: {
+        flex: 1,
+        alignItems: 'center'
     }
 
 });

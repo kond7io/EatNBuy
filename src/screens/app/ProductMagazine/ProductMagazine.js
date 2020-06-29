@@ -4,7 +4,7 @@ import Animated from 'react-native-reanimated';
 import EBSearchProduct from './EBSearchProduct/EBSearchProduct';
 import EBProductList from './EBProductList/EBProductList';
 
-import {styles} from '../ProductMagazine/styles';
+import {styles} from './styles';
 
 import {theme} from '../../../utils/colors';
 import back from '../../../img/productMagazine/background.jpg';

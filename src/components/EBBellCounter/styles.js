@@ -4,17 +4,17 @@ import {theme} from '../../utils/colors';
 
 export const styles = StyleSheet.create({
     container: {
-      flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
     },
     counter: {
-        color: theme,
-        fontSize: windowWidth * 0.032,
-        fontWeight: 'bold',
-        backgroundColor: 'white',
-        borderRadius: 25,
         height: windowWidth * 0.045,
         width: windowWidth * 0.045,
+        fontSize: windowWidth * 0.032,
+        fontWeight: 'bold',
         textAlign: 'center',
-        marginLeft: - windowWidth * 0.03
+        textAlignVertical: 'center',
+        marginLeft: - windowWidth * 0.03,
+        borderRadius: 25
     }
 });

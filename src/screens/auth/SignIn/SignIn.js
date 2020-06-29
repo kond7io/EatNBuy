@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import EBLoginForm from './EBLoginForm/EBLoginForm';
 import EBSlider from '../../../components/EBSlider/EBSlider';
 
-import {styles} from '../SignIn/styles';
+import {styles} from './styles';
 import {theme} from '../../../utils/colors';
 import loginImage1 from '../../../img/signIn/loginImage1.png';
 import loginImage2 from '../../../img/signIn/loginImage2.png';

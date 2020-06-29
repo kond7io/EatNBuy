@@ -1,7 +1,7 @@
 import React, { useState }from 'react';
 import {Text, Image, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import * as ImagePicker from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker';
 
 import {styles} from './styles';
 import avatar from '../../img/signUp/avatar.png';

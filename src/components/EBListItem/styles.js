@@ -20,7 +20,8 @@ export const styles = StyleSheet.create({
         elevation: 6,
         backgroundColor: 'white',
         padding:windowWidth * 0.02,
-        borderColor: 'black'
+        borderColor: 'black',
+        borderRadius: 5
     },
     image: {
         width: windowHeight * 0.09,
@@ -40,12 +41,12 @@ export const styles = StyleSheet.create({
       opacity: 0.5,
     },
     user: {
-        marginLeft: 3,
-        marginRight: 5,
+        marginLeft: windowHeight* 0.0045,
+        marginRight: windowHeight* 0.0075,
         opacity: 0.5
     },
     date: {
-        marginLeft: 3,
+        marginLeft: windowHeight* 0.0045,
         opacity: 0.5
     },
     counter: {

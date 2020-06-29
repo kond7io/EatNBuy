@@ -4,10 +4,6 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {styles} from './styles';
 
-
-import {windowHeight, windowWidth} from '../../../../../utils/deviceDimension'
-
-
 const EBListButton = () => {
 
     return (

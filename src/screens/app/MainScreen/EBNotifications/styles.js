@@ -5,24 +5,28 @@ import {theme} from '../../../../utils/colors';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         backgroundColor: 'white',
         opacity: 0.9,
-
-
     },
     modal: {
-
-        backgroundColor: "white",
-        borderRadius: 20,
         alignItems: "center",
         justifyContent:'center',
         width: '90%',
         height: '80%',
+        backgroundColor: "white",
+        borderRadius: 20,
         borderWidth: 1,
-        borderColor: 'gray'
-
+        borderColor: 'gray',
+        marginTop: windowHeight * 0.075
+    },
+    modalHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      width: '90%',
+      padding: windowHeight * 0.0075
     },
     notificationsText: {
         textAlign:'left',

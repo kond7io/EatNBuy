@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import {ImageBackground, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Animated from 'react-native-reanimated';
 
-import {styles} from '../EBProductList/styles';
+import {styles} from './styles';
 
 
 console.disableYellowBox = true;

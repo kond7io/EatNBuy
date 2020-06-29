@@ -3,7 +3,7 @@ import {TextInput, TouchableOpacity, View} from 'react-native';
 import Animated from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {styles} from '../EBSearchProduct/styles';
+import {styles} from './styles';
 
 console.disableYellowBox = true;
 

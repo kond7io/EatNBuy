@@ -10,7 +10,7 @@ import testIMG4 from '../../../../img/test/testIMG4.jpg';
 import testIMG5 from '../../../../img/test/testIMG5.jpg';
 import testIMG6 from '../../../../img/test/testIMG6.jpg';
 
-import {styles} from '../../MainScreen/EBScrollList/styles'
+import {styles} from './styles'
 
 console.disableYellowBox = true;
 

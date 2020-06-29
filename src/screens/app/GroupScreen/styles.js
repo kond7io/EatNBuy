@@ -7,8 +7,10 @@ export const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     text: {
-        marginTop: windowHeight * 0.1,
+        flex: 0.2,
+        marginTop: windowHeight * 0.05,
         textAlign: 'center',
+        textAlignVertical: 'bottom',
         fontWeight: 'bold',
         fontSize: windowWidth * 0.065
     }
