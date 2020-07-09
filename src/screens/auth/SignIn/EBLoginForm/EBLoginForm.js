@@ -5,7 +5,11 @@ import EBButton from '../../../../components/EBButton/EBButton';
 
 import {styles} from './styles';
 import EBInput from '../../../../components/EBInput/EBInput';
-import {Text} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
+import SignUp from "../../SignUp/SignUp";
+
+import Screens from "../../../../navigation/Screens";
+import Navigation from "../../../../utils/Navigation";
 
 const EBLoginForm = () => {
 
@@ -26,14 +30,14 @@ const EBLoginForm = () => {
              <Form style={styles.form}>
                  <EBInput  text='Email' icon='at' keyboardType={'email-address'}/>
                     <EBInput  text='Hasło' icon='keypad' isPassword={true}/>
-
                 <EBButton
                     icon='sign-in'
                     title='Zaloguj'
                     animation={isAnimation}
-                    onPress={() => alert("Zaloguj")}
+                    target={Screens.GROUP_SCREEN}
                 />
-                 <Text onPres={() => alert("Zarejestruj")}
+
+                 <Text onPress={() => Navigation.navigate(Screens.SIGN_UP)}
                         style={styles.registrationText}>Nie masz jeszcze konta?</Text>
              </Form>
         </Animatable.View>

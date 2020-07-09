@@ -5,13 +5,17 @@ import * as Animatable from 'react-native-animatable';
 import EBButton from '../../../../components/EBButton/EBButton';
 import EBInput from '../../../../components/EBInput/EBInput';
 import EBImagePicker from '../../../../components/EBImagePicker/EBImagePicker';
+import Screens from "../../../../navigation/Screens";
+import Navigation from "../../../../utils/Navigation";
 
 import PropTypes from "prop-types";
 import {styles} from './styles';
+import {useDispatch} from "react-redux";
+import {getUserSignUpAction} from "../../../../redux/User/User.action";
 
 const EBRegistrationForm = () => {
 
-
+    const dispatch = useDispatch();
     const [email, useEmail] = useState('Login...');
     const [password, usePassword] = useState('Password...');
     const [isSecure, useSecure] = useState(true);
@@ -43,7 +47,7 @@ const EBRegistrationForm = () => {
                     icon='sign-in'
                     title='Załóż konto'
                     animation={isAnimation}
-                    onPress={() => alert("Zaloguj")}
+
                 />
             </Form>
         </Animatable.View>

@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {windowHeight, windowWidth} from '../../../utils/deviceDimension';
-import {theme} from '../../../utils/colors';
+import {windowHeight, windowWidth} from '../../../constans/deviceDimension';
+import {colors} from '../../../constans/colors';
 
 
 export const styles = StyleSheet.create({
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
         top: windowHeight * 0.025,
         fontSize: windowHeight * 0.025,
         fontWeight: 'bold',
-        color: theme
+        color: colors.theme
     },
     optionalText: {
         top: windowHeight * 0.025,

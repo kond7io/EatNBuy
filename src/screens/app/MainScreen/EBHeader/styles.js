@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {windowHeight, windowWidth} from '../../../../utils/deviceDimension';
-import {theme} from '../../../../utils/colors';
+import {windowHeight, windowWidth} from '../../../../constans/deviceDimension';
+import {colors} from '../../../../constans/colors';
 
 export const styles = StyleSheet.create({
     header: {
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     },
     groupName: {
         fontWeight: 'bold',
-        color: theme,
+        color: colors.theme,
         fontSize: windowHeight * 0.03,
         backgroundColor: 'white',
         borderRadius: 15,

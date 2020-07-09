@@ -3,8 +3,6 @@ import {Image, Text, View, ImageBackground, TouchableOpacity} from 'react-native
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {styles} from './styles';
-import {theme} from '../../utils/colors';
-
 
 const EBListItem = ({items}) => {
 

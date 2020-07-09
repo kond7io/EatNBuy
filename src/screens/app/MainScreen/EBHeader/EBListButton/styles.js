@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {windowHeight, windowWidth} from '../../../../../utils/deviceDimension';
-import {theme} from '../../../../../utils/colors';
+import {windowHeight, windowWidth} from '../../../../../constans/deviceDimension';
+import {colors} from '../../../../../constans/colors';
 
 
 export const styles = StyleSheet.create({
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         margin: windowWidth * 0.05,
         height: windowHeight * 0.1,
-        backgroundColor: theme,
+        backgroundColor: colors.theme,
         borderColor: 'black',
 
         shadowColor: "#000",

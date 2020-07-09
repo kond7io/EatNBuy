@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 import Animated from 'react-native-reanimated';
 import EBHeader from './EBHeader/EBHeader';
 import EBScrollList from './EBScrollList/EBScrollList';
-import {windowHeight} from '../../../utils/deviceDimension';
+import {windowHeight} from '../../../constans/deviceDimension';
 
 import {styles} from './styles';
 import EBNotifications from './EBNotifications/EBNotifications';

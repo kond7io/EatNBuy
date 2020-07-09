@@ -3,8 +3,7 @@ import {Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 import {styles} from './styles';
-import {theme} from '../../utils/colors';
-import {windowHeight} from '../../utils/deviceDimension';
+import {windowHeight} from '../../constans/deviceDimension';
 
 console.disableYellowBox = true;
 

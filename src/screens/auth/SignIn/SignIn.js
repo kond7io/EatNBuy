@@ -4,12 +4,13 @@ import EBLoginForm from './EBLoginForm/EBLoginForm';
 import EBSlider from '../../../components/EBSlider/EBSlider';
 
 import {styles} from './styles';
-import {theme} from '../../../utils/colors';
+import {colors} from '../../../constans/colors';
 import loginImage1 from '../../../img/signIn/loginImage1.png';
 import loginImage2 from '../../../img/signIn/loginImage2.png';
 import loginImage3 from '../../../img/signIn/loginImage3.png';
 import loginImage4 from '../../../img/signIn/loginImage4.png';
 import loginImage5 from '../../../img/signIn/loginImage5.png';
+import EBLoaderOverlay from "../../../components/EBLoader/EBLoaderOverlay/EBLoaderOverlay";
 
 const SignIn = () => {
     const items = [
@@ -21,8 +22,9 @@ const SignIn = () => {
 
     return (
         <View style={styles.container}>
-            <EBSlider auto={true} loop={true} buttonsVisible={false} dotVisible={true} dotColor={"#8e8991"} activeDotColor={theme} items={items} />
+            <EBSlider auto={true} loop={true} buttonsVisible={false} dotVisible={true} dotColor={"#8e8991"} activeDotColor={colors.theme} items={items} />
             <EBLoginForm />
+            <EBLoaderOverlay visible={false} />
         </View>
 
     )

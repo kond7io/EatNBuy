@@ -10,7 +10,7 @@ import {styles} from './styles';
 import EBBellCounter from '../../../../components/EBBellCounter/EBBellCounter';
 import {nameFormat} from '../../../../utils/nameFormat';
 import EBListButton from './EBListButton/EBListButton';
-import {theme} from "../../../../utils/colors";
+import {colors} from "../../../../constans/colors";
 import EBNotifications from "../EBNotifications/EBNotifications";
 
 console.disableYellowBox = true;
@@ -40,7 +40,7 @@ const EBHeader = ({headerY, number, groupName}) => {
                         number={number}
                         iconColor={'white'}
                         bgColor={'white'}
-                        ctColor={theme}
+                        ctColor={colors.theme}
                     />
                     </TouchableOpacity>
                     <EBNotifications useNotifications={useNotifications} notificationsVisible={notificationsVisible}/>

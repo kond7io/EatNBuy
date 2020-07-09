@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './src/redux/store/store';
 
-import * as  firebase from "firebase";
-import { createSwitchNavigator} from "react-navigation";
-import SignIn  from './src/screens/auth/SignIn/SignIn';
-import SignUp  from './src/screens/auth/SignUp/SignUp';
-import GroupScreen  from './src/screens/app/GroupScreen/GroupScreen';
-import MainScreen  from './src/screens/app/MainScreen/MainScreen';
-import ProductMagazine  from './src/screens/app/ProductMagazine/ProductMagazine';
+import * as  firebase from "firebase";;
+import Navigator from '../EatNBuy/src/navigation/navigator';
+import Navigation from'../EatNBuy/src/utils/Navigation';
+import FlashMessage from "react-native-flash-message";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCcztTmsnm3MKlJ4Ur_5wXpcR4-P-2w6Pw",
@@ -22,18 +21,18 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// const AuthSwitchNavigator = createSwitchNavigator({
-//   SignIn: { screen: SignIn},
-//   SignUp: { screen: SignUp}
-// })
 
 export default class App extends React.Component {
     render() {
         return (
-            <View style={{flex:1}}>
-                <SignUp />
-
-            </View>
+            <Provider store={store}>
+                <View style={{flex: 1}}>
+                    <Navigator ref={navigatorRef => {
+                        Navigation.setTopLevelNavigator(navigatorRef);
+                    }}/>
+                    <FlashMessage position='top' />
+                </View>
+            </Provider>
         )
     }
 }

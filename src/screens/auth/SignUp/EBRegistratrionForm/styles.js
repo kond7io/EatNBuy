@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {windowHeight, windowWidth} from '../../../../utils/deviceDimension';
-import {theme} from '../../../../utils/colors';
+import {windowHeight, windowWidth} from '../../../../constans/deviceDimension';
+import {colors} from '../../../../constans/colors';
 
 export const styles = StyleSheet.create({
     container: {
@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     },
     form: {
         flex: 1,
-        backgroundColor: theme,
+        backgroundColor: colors.theme,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         paddingVertical: 50,
