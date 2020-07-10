@@ -1,4 +1,5 @@
 import { createAsyncConsts } from '../../utils/createAsyncConsts';
+import {User} from "../../types/User";
 
 /** SIGN UP **/
 
@@ -36,3 +37,39 @@ export const getUserSignUpRejected = (error) => {
 };
 
 /** SIGN UP END**/
+
+/** SIGN IN**/
+
+export const HANDLE_SIGN_IN = 'HANDLE_SIGN_IN';
+export const getUserSignInAction = (email: string, password: string) => {
+    return {
+        type: HANDLE_SIGN_IN,
+        payload: {
+            email: email,
+            password: password
+        }
+    }
+};
+
+export const SIGN_IN = createAsyncConsts('SIGN_IN');
+export const getUserSignInPending = () => {
+    return {
+        type: SIGN_IN.pending
+    }
+};
+
+export const getUserSignInResolved = (user: User) => {
+    return {
+        type: SIGN_IN.resolved,
+        payload: user
+    }
+};
+
+export const getUserSignInRejected = (error) => {
+    return {
+        type: SIGN_IN.rejected,
+        payload: error
+    }
+};
+
+/** SIGN IN END**/

@@ -1,4 +1,4 @@
-import {SIGN_UP} from "./User.action";
+import {SIGN_IN, SIGN_UP} from "./User.action";
 
 const INITIAL_STATE: any = {
     user: undefined,
@@ -22,6 +22,24 @@ export const UserReducer = (state = INITIAL_STATE, action: any) => {
                 loading: false,
             };
         case SIGN_UP.rejected:
+            return {
+                ...state,
+                loading: false,
+                error: true
+            }
+        case SIGN_IN.pending:
+            return {
+                ...state,
+                loading: true,
+                error: false
+            };
+        case SIGN_IN.resolved:
+            return {
+                ...state,
+                user: action.payload,
+                loading: false,
+            };
+        case SIGN_IN.rejected:
             return {
                 ...state,
                 loading: false,

@@ -47,7 +47,7 @@ const EBRegistrationForm = () => {
                     icon='sign-in'
                     title='Załóż konto'
                     animation={isAnimation}
-
+                    target={getUserSignUpAction('Martynka', 'martynka@gmail.com','konrad123')}
                 />
             </Form>
         </Animatable.View>

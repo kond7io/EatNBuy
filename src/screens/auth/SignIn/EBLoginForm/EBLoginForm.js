@@ -10,6 +10,7 @@ import SignUp from "../../SignUp/SignUp";
 
 import Screens from "../../../../navigation/Screens";
 import Navigation from "../../../../utils/Navigation";
+import {getUserSignInAction} from "../../../../redux/User/User.action";
 
 const EBLoginForm = () => {
 
@@ -34,7 +35,7 @@ const EBLoginForm = () => {
                     icon='sign-in'
                     title='Zaloguj'
                     animation={isAnimation}
-                    target={Screens.GROUP_SCREEN}
+                    target={getUserSignInAction('martynka@gmail.com', 'konrad123')}
                 />
 
                  <Text onPress={() => Navigation.navigate(Screens.SIGN_UP)}

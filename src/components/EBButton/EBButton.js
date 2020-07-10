@@ -17,7 +17,7 @@ const EBButton = ({title, icon, animation, target}) => {
         animation ?
         <Animatable.View animation='fadeInDown' delay={0}>
            <TouchableOpacity style={styles.container}
-                             onPress={()=> dispatch(getUserSignUpAction('Martynka', 'martynka@gmail.com','konrad123'))}
+                             onPress={()=> dispatch(target)}
            >
                <Icon name={icon} size={25} color={colors.theme} />
                <Text style={styles.text}>{title}</Text>
