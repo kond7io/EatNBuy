@@ -18,7 +18,7 @@ const SignIn = () => {
         {message: "Stwórz listę zakupów", img: loginImage2},
         {message: "Dobierz brakujące produkty", img: loginImage3},
         {message: "Utwórz lub dołącz do grupy", img: loginImage4},
-        {message: "Miej wpływ na statystyki", img: loginImage5}];
+        {message: "Wpływaj na statystyki", img: loginImage5}];
 
     return (
         <View style={styles.container}>

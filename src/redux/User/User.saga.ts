@@ -19,11 +19,13 @@ import {User} from "../../types/User";
 
 function* signup(action: any) {
     yield put(getUserSignUpPending());
-
+debugger;
     try {
+        debugger;
         const { name, email, password } = action.payload;
         const user = yield userRegister(name, email, password);
         yield put(getUserSignUpResolved(user))
+        debugger;
         flashMessage('Uwaga' ,'Resolved - register','success')
         Navigation.navigate(Screens.SIGN_IN)
 
@@ -39,7 +41,7 @@ function* signin(action: any) {
     try {
         const { email, password } = action.payload;
         const user: User  = yield userLogin(email, password);
-        yield put(getUserSignInResolved(user))
+        yield put(getUserSignInResolved(user));
         flashMessage('Uwaga' ,'Resolved - login','success')
         Navigation.navigate(Screens.GROUP_SCREEN)
 
