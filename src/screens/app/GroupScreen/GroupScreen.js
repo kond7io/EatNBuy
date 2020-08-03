@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import EBSlider from '../../../components/EBSlider/EBSlider';
 
@@ -20,6 +20,10 @@ const GroupScreen = () => {
         {message: "Dołącz do istniejącej grupy", img: joinImage, optional: "Tekst nr 2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."}];
 
     const [notificationsVisible, useNotifications] = useState(false);
+
+    useEffect(()=>{
+        
+    })
 
     return (
         <View style={styles.container}>

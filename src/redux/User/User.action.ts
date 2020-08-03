@@ -5,6 +5,7 @@ import {User} from "../../types/User";
 
 export const HANDLE_SIGN_UP = 'HANDLE_SIGN_UP';
 export const getUserSignUpAction = (name: string, email: string, password: string) => {
+    debugger;
     return {
         type: HANDLE_SIGN_UP,
         payload: {
@@ -23,6 +24,7 @@ export const getUserSignUpPending = () => {
 };
 
 export const getUserSignUpResolved = (registeredUser: any) => {
+    debugger;
     return {
         type: SIGN_UP.resolved,
         payload: registeredUser
@@ -30,6 +32,7 @@ export const getUserSignUpResolved = (registeredUser: any) => {
 };
 
 export const getUserSignUpRejected = (error) => {
+    debugger;
     return {
         type: SIGN_UP.rejected,
         payload: error

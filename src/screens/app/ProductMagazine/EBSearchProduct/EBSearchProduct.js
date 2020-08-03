@@ -26,7 +26,7 @@ const EBSearchProduct = () => {
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity style={styles.barcodeButton}>
-                        <Icon style={styles.iconBarcode} name={'barcode-scan'} color={'black'}/>
+                        <Icon style={styles.iconBarcode} name={'barcode-scan'} color={'white'}/>
                     </TouchableOpacity>
                 </View>
     )

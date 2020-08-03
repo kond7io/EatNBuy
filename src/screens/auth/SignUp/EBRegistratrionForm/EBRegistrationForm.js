@@ -36,7 +36,7 @@ const EBRegistrationForm = () => {
                 <EBInput text='Imię' icon='person' isPassword={false} setValue={setName}/>
                         <EBInput text='Email' icon='at' keyboardType={'email-address'} isPassword={false} setValue={setEmail}/>
                             <EBInput text='Hasło' icon='keypad' isPassword={true} setValue={setPassword}/>
-                                <EBInput text='Powtórz hasło' icon='keypad' isPassword={true}/>
+                                <EBInput text='Powtórz hasło' icon='keypad' isPassword={true} setValue={setPassword}/>
 
                  <Text onPres={() => alert("Forgotten password")}
                        style={styles.registrationText}>Zapomniałeś hasła?

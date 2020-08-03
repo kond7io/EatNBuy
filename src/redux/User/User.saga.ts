@@ -7,6 +7,7 @@ import {
     HANDLE_SIGN_UP
 } from "./User.action";
 import {
+    userCreateBranch,
     userLogin,
     userRegister
 } from "./User.api";
@@ -18,18 +19,21 @@ import {User} from "../../types/User";
 
 
 function* signup(action: any) {
+    debugger;
     yield put(getUserSignUpPending());
 debugger;
     try {
         debugger;
         const { name, email, password } = action.payload;
         const user = yield userRegister(name, email, password);
+        yield userCreateBranch();
         yield put(getUserSignUpResolved(user))
         debugger;
         flashMessage('Uwaga' ,'Resolved - register','success')
         Navigation.navigate(Screens.SIGN_IN)
 
     } catch(error) {
+        debugger;
         yield put(getUserSignUpRejected(error))
         flashMessage('Uwaga' ,'Wystąpił błąd podczas rejestracji','danger')
     }

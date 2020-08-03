@@ -1,12 +1,10 @@
 import React,{useState} from 'react';
-import {ImageBackground, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {View} from 'react-native';
 import Animated from 'react-native-reanimated';
 import EBSearchProduct from './EBSearchProduct/EBSearchProduct';
 import EBProductList from './EBProductList/EBProductList';
 
 import {styles} from './styles';
-
-import back from '../../../img/productMagazine/background.jpg';
 
 console.disableYellowBox = true;
 
@@ -15,10 +13,19 @@ const ProductMagazine = () => {
 
     return (
         <View style={styles.container}>
-            <ImageBackground source={back} style={{flex:1, width:'100%', alignItems:'center'}}>
+            <View
+                style={styles.headerSearchProduct}>
                 <EBSearchProduct/>
-                <EBProductList/>
-            </ImageBackground>
+            </View>
+
+            <View
+                style={styles.block}
+            />
+
+            <View
+                style={styles.productsListContainer}>
+                <EBProductList />
+            </View>
         </View>
 
     )

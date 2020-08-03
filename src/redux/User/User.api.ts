@@ -19,11 +19,15 @@ firebase.initializeApp(firebaseConfig);
 export const userRegister = async (name: string, email: string, password: string) => {
     debugger;
     let response = await firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(await firebase.database().ref('users' + '/' + firebase.auth().currentUser.uid).set({
-            name: name,
-            isGrouped: false,
-        }))
     debugger;
+    return response;
+};
+
+export const userCreateBranch = async () => {
+    let response = await firebase.database().ref('users' + '/' + firebase.auth().currentUser.uid).set({
+        name: name,
+        isGrouped: false,
+    });
     return response;
 };
 

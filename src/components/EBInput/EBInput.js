@@ -4,24 +4,28 @@ import { Item, Input, Label, Icon as NBIcon } from 'native-base';
 import {styles} from './styles';
 import PropTypes from 'prop-types';
 
+
+import withHandlePassword from "../hoc/withHandlePassword";
+const EBIcon = withHandlePassword(NBIcon);
+
 const EBInput = ({text, icon, isPassword, keyboardType, setValue}) => {
 
     debugger;
 
-    const [isSecure, setSecure] = useState(false);
+   const [isSecure, setSecure] = useState(false);
 
-    const _render = () => {
-        if(isSecure){
-            return <NBIcon
-                   style={styles.NBIconOff}
-                   name="eye-off"
-                   onPress={() => setSecure(!isSecure)}/>
-        }
-        return <NBIcon
-               style={styles.NBIcon}
-               name="eye"
-               onPress={() => setSecure(!isSecure)}/>
-    };
+    // const _render = () => {
+    //     if(isSecure){
+    //         return <NBIcon
+    //                style={styles.NBIconOff}
+    //                name="eye-off"
+    //                onPress={() => setSecure(!isSecure)}/>
+    //     }
+    //     return <NBIcon
+    //            style={styles.NBIcon}
+    //            name="eye"
+    //            onPress={() => setSecure(!isSecure)}/>
+    // };
 
     return (
                 <Item floatingLabel last style={styles.item}>
@@ -34,9 +38,17 @@ const EBInput = ({text, icon, isPassword, keyboardType, setValue}) => {
                         secureTextEntry={isPassword ? !isSecure : isSecure}
                         onChangeText={value => setValue(value)}
                     />
-                    {isPassword
-                        ? _render()
-                        : <></>}
+
+                    {isPassword ?
+                        <EBIcon
+                            style={styles.NBIconOff}
+                            name="eye-off"
+                            onPress={() => setSecure(!isSecure)}
+                        /> : <></>}
+
+                    {/*{isPassword*/}
+                    {/*    ? _render()*/}
+                    {/*    : <></>}*/}
                 </Item>
     )
 };

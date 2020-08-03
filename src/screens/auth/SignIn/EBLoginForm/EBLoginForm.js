@@ -11,12 +11,13 @@ import Screens from "../../../../navigation/Screens";
 import Navigation from "../../../../utils/Navigation";
 import {getUserSignInAction} from "../../../../redux/User/User.action";
 
+
 const EBLoginForm = () => {
 
     const [isAnimation, setAnimation] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+debugger;
     console.disableYellowBox = true;
     return (
         <Animatable.View

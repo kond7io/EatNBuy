@@ -4,6 +4,8 @@ import {windowHeight, windowWidth} from '../../../../constans/deviceDimension';
 export const styles = StyleSheet.create({
 
     container: {
-        flex: 4,
+        marginTop: 20,
+        textAlign: 'center',
+        alignItems: 'center'
     }
 });

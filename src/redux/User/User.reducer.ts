@@ -28,18 +28,21 @@ export const UserReducer = (state = INITIAL_STATE, action: any) => {
                 error: true
             }
         case SIGN_IN.pending:
+            debugger;
             return {
                 ...state,
                 loading: true,
                 error: false
             };
         case SIGN_IN.resolved:
+            debugger;
             return {
                 ...state,
                 user: action.payload,
                 loading: false,
             };
         case SIGN_IN.rejected:
+            debugger;
             return {
                 ...state,
                 loading: false,
