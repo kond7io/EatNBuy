@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     headerSearchProduct: {
-        flex:0.8,
+        flex:0.3,
         alignItems:'center',
         width: '100%',
         backgroundColor:colors.theme,
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     },
     productsListContainer: {
         flex:3,
-        alignItems:'center',
+
         width:'100%',
         backgroundColor:'white',
         borderTopLeftRadius: 75,

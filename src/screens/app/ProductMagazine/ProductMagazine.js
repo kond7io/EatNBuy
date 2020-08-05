@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import Animated from 'react-native-reanimated';
 import EBSearchProduct from './EBSearchProduct/EBSearchProduct';
 import EBProductList from './EBProductList/EBProductList';
@@ -22,10 +22,12 @@ const ProductMagazine = () => {
                 style={styles.block}
             />
 
-            <View
+            <ScrollView
                 style={styles.productsListContainer}>
-                <EBProductList />
-            </View>
+
+                    <EBProductList />
+
+            </ScrollView>
         </View>
 
     )

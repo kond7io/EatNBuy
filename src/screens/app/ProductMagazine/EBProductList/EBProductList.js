@@ -2,8 +2,8 @@ import React,{useState} from 'react';
 import {View} from 'react-native';
 import Animated from 'react-native-reanimated';
 
-import {styles} from './styles';
 import EBCollapsibleView from "../../../../components/EBCollapsibleView/EBCollapsibleView";
+import {styles} from './styles';
 
 console.disableYellowBox = true;
 
@@ -25,6 +25,23 @@ const productsList = [
             {product: 'czekolada', company: 'Milka',selected: false},
             {product: 'baton', company: 'Twix', selected: false},
             ]},
+    {category: 'Słodycze',
+        data: [
+            {product: 'czekolada', company: 'Milka',selected: false},
+            {product: 'baton', company: 'Twix', selected: false},
+        ]},
+    {category: 'Słodycze',
+        data: [
+            {product: 'czekolada', company: 'Milka',selected: false},
+            {product: 'baton', company: 'Twix', selected: false},
+        ]},
+    {category: 'Słodycze',
+        data: [
+            {product: 'czekolada', company: 'Milka',selected: false},
+            {product: 'baton', company: 'Twix', selected: false},
+        ]},
+
+
     {category: 'Higiena',
         data: [
             {product: 'reczniki papierowe', company: 'Mola', selected: true},
