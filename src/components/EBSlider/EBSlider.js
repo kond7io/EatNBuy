@@ -12,18 +12,17 @@ const EBSlider = ({auto, loop, dotColor, activeDotColor, items, buttonsVisible, 
                 autoplay={auto}
                 loop={loop}
                 showsButtons={buttonsVisible}
-                style={styles.wrapper}
                 showsPagination={dotVisible}
                 activeDotStyle={styles.activeDotStyle}
                 dotStyle={styles.dotStyle}
                 dotColor={dotColor}
                 activeDotColor={activeDotColor}>
 
-                {items.map((item) => {
+                {items.map(({img, message, optional}) => {
                         return <EBSlide
-                            image={item.img}
-                            message={item.message}
-                            optionalText={item.optional ? item.optional : null}
+                            image={img}
+                            message={message}
+                            optionalText={optional ? optional : null}
                         />
                 })}
 
