@@ -8,21 +8,14 @@ import {styles} from './styles';
 
 console.disableYellowBox = true;
 
-const EBCollapsibleView = ({category, data}) => {
+const EBCollapsibleView = ({category, data, render}) => {
 
     const [visible, setVisible] = useState(false);
-
-    const hoverComponent = (index) => {
-        alert('asd')
-
-    }
 
     return (
         <View style={styles.container}>
             <EBCollapsibleHeader category={category} data={data} visible={visible} setVisible={setVisible} />
-            {visible
-                ? <EBCollapsibleItem data={data} visible={visible}/>
-                : <></>}
+            {render({data, visible})}
         </View>
     )
 };

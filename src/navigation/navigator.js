@@ -22,23 +22,23 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 
 const AppBottomTabStack = createBottomTabNavigator({
 
-        // [Screens.MAIN_SCREEN]: {
-        //     screen: MainScreen,
-        //     navigationOptions: {
-        //         title: 'Główna',
-        //         tabBarIcon: iconNavigator('home')
-        //     },
-        //
-        //
-        // },
-        // [Screens.STATISTICS_SCREEN]: {
-        //     screen: StatisticsScreen,
-        //     navigationOptions: {
-        //         title: 'Statystki',
-        //         tabBarIcon: iconNavigator('chart-line')
-        //
-        //     }
-        // },
+        [Screens.MAIN_SCREEN]: {
+            screen: MainScreen,
+            navigationOptions: {
+                title: 'Główna',
+                tabBarIcon: iconNavigator('home')
+            },
+
+
+        },
+        [Screens.STATISTICS_SCREEN]: {
+            screen: StatisticsScreen,
+            navigationOptions: {
+                title: 'Statystki',
+                tabBarIcon: iconNavigator('chart-line')
+
+            }
+        },
         [Screens.PRODUCT_MAGAZINE]: {
             screen: ProductMagazine,
             navigationOptions: {

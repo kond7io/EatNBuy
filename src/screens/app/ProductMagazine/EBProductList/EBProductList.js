@@ -4,6 +4,7 @@ import Animated from 'react-native-reanimated';
 
 import EBCollapsibleView from "../../../../components/EBCollapsibleView/EBCollapsibleView";
 import {styles} from './styles';
+import EBCollapsibleItem from "../../../../components/EBCollapsibleView/EBCollapsibleItem/EBCollapsibleItem";
 
 console.disableYellowBox = true;
 
@@ -59,6 +60,11 @@ const EBProductList = () => {
                 <EBCollapsibleView
                     category = {item.category}
                     data = {item.data}
+                    render={({data, visible})=> (
+                        visible
+                            ? <EBCollapsibleItem data={data} visible={visible}/>
+                            : null
+                        )}
                 />
             )
         }
