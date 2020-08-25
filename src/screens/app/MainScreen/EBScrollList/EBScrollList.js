@@ -16,16 +16,16 @@ console.disableYellowBox = true;
 
 const element = ["aaa",'bbb','ccc','ddd','eee','fff','ggg','hhh','iii','jjj','kkk','lll','mmm','nnn','ooo','ppp','rrr','sss','ttt','111','222','333','444','555','666'];
 const items = [
-    {user: "Klaudia", img: testIMG3, name: 'Dla Alanka', date: '28.05.2020', counter: 5},
-    {user: "Martyna", img: testIMG , name: 'Mojeee ...', date: '27.05.2020', counter: 8},
-    {user: "Bożena", img: testIMG5, name: 'Do domu', date: '27.05.2020', counter: 20},
-    {user: "Bożena", img: testIMG5, name: 'Do domu', date: '28.05.2020', counter: 145},
-    {user: "Tomek", img: testIMG4, name: 'inne towary', date: '28.05.2020', counter: 2},
-    {user: "Bożena", img: testIMG5, name: 'Do domu', date: '25.05.2020', counter: 1},
-    {user: "Robert", img: testIMG6, name: 'Masło 80%', date: '24.05.2020', counter: 3},
-    {user: "Konrad", img: testIMG2, name: 'Pamiętaj czekolada', date: '28.05.2020', counter: 7},
-    {user: "Martyna", img: testIMG, name: 'Moje2 ...', date: '27.05.2020', counter: 9},
-    {user: "Konrad", img:testIMG2, name: 'Lista Konrada', date: '28.05.2020', counter: 2}];
+    {user: "Amelia", img: testIMG3, name: 'for meee', date: '28.05.2020', counter: 5},
+    {user: "Martyna", img: testIMG , name: 'my list ...', date: '27.05.2020', counter: 8},
+    {user: "Jack", img: testIMG5, name: 'home list', date: '27.05.2020', counter: 20},
+    {user: "Jack", img: testIMG5, name: 'forgotten things', date: '28.05.2020', counter: 145},
+    {user: "Ethan", img: testIMG4, name: 'Ethan ...', date: '28.05.2020', counter: 2},
+    {user: "Amelia", img: testIMG3, name: 'for me part 2', date: '25.05.2020', counter: 1},
+    {user: "Robert", img: testIMG6, name: 'dinner', date: '24.05.2020', counter: 3},
+    {user: "Emma", img: testIMG2, name: 'remember sweets', date: '28.05.2020', counter: 7},
+    {user: "Martyna", img: testIMG, name: 'my list ...', date: '27.05.2020', counter: 9},
+    {user: "Emma", img:testIMG2, name: "Emma's things", date: '28.05.2020', counter: 2}];
 
 const EBScrollList = ({navbarHeight, scroll}) => {
 

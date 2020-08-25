@@ -16,7 +16,7 @@ import EBNotifications from "../EBNotifications/EBNotifications";
 console.disableYellowBox = true;
 const userName = nameFormat('Martyna')
 
-const EBHeader = ({headerY, number, groupName}) => {
+const EBHeader = ({headerY, number, groupName, navigateTarget}) => {
 
     const [notificationsVisible, useNotifications] = useState(false);
 
@@ -55,7 +55,7 @@ const EBHeader = ({headerY, number, groupName}) => {
                         style={styles.welcome}>Witaj, {userName}</Text>
                     </View>
             </ImageBackground>
-            <EBListButton/>
+            <EBListButton />
         </Animated.View>
     )
 };

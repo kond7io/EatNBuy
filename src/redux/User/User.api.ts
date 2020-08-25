@@ -14,7 +14,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-//const USER_ID = firebase.auth().currentUser.uid;
+
 
 export const userRegister = async (name: string, email: string, password: string) => {
     debugger;
@@ -23,7 +23,8 @@ export const userRegister = async (name: string, email: string, password: string
     return response;
 };
 
-export const userCreateBranch = async () => {
+export const userCreateBranch = async (name: string) => {
+
     let response = await firebase.database().ref('users' + '/' + firebase.auth().currentUser.uid).set({
         name: name,
         isGrouped: false,

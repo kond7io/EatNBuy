@@ -7,7 +7,7 @@ import {styles} from './styles';
 
 console.disableYellowBox = true;
 
-const EBSearchProduct = () => {
+const EBSearchProduct = ({barcodeColor}) => {
     return (
                 <View style={styles.header}>
                     <View style={styles.searchInput}>
@@ -26,7 +26,7 @@ const EBSearchProduct = () => {
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity style={styles.barcodeButton}>
-                        <Icon style={styles.iconBarcode} name={'barcode-scan'} color={'white'}/>
+                        <Icon style={styles.iconBarcode} name={'barcode-scan'} color={barcodeColor}/>
                     </TouchableOpacity>
                 </View>
     )

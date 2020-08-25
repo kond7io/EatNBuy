@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         width: '80%',
         flexDirection: 'row',
         alignItems:'center',
+
     },
     searchInput: {
         flex: 4,

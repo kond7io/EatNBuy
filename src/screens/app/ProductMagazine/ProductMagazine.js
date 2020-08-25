@@ -15,7 +15,7 @@ const ProductMagazine = () => {
         <View style={styles.container}>
             <View
                 style={styles.headerSearchProduct}>
-                <EBSearchProduct/>
+                <EBSearchProduct barcodeColor={'white'}/>
             </View>
 
             <View

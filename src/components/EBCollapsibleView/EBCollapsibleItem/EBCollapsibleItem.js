@@ -1,6 +1,5 @@
-import React,{useState} from 'react';
-import {FlatList, Text, View, LayoutAnimation, UIManager, ScrollView} from 'react-native';
-import Icon from "react-native-vector-icons/MaterialIcons";
+import React, {useState} from 'react';
+import {FlatList} from 'react-native';
 
 import {styles} from './styles';
 import EBItem from "./EBItem/EBItem";

@@ -26,7 +26,7 @@ debugger;
         debugger;
         const { name, email, password } = action.payload;
         const user = yield userRegister(name, email, password);
-        yield userCreateBranch();
+        yield userCreateBranch(name);
         yield put(getUserSignUpResolved(user))
         debugger;
         flashMessage('Uwaga' ,'Resolved - register','success')

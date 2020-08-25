@@ -18,6 +18,7 @@ import SettingsScreen from "../screens/app/SettingsScreen/SettingsScreen";
 import iconNavigator from "../utils/iconNavigator";
 import {colors} from "../constans/colors";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import AddProductList from "../screens/app/AddProductList/AddProductList";
 
 
 const AppBottomTabStack = createBottomTabNavigator({
@@ -27,9 +28,7 @@ const AppBottomTabStack = createBottomTabNavigator({
             navigationOptions: {
                 title: 'Główna',
                 tabBarIcon: iconNavigator('home')
-            },
-
-
+            }
         },
         [Screens.STATISTICS_SCREEN]: {
             screen: StatisticsScreen,
@@ -62,17 +61,21 @@ const AppBottomTabStack = createBottomTabNavigator({
     );
 
 const AuthStack = createStackNavigator({
-        [Screens.SIGN_IN]: SignIn,
+        // [Screens.SIGN_IN]: SignIn,
         [Screens.SIGN_UP]: SignUp,
-        [Screens.GROUP_SCREEN]: GroupScreen
+        [Screens.GROUP_SCREEN]: GroupScreen,
+
     },
     {headerMode: 'none'}
     );
 
+
+
 export default createAppContainer(createSwitchNavigator(
     {
-        Auth: AuthStack,
-        App: AppBottomTabStack
+        // Auth: AuthStack,
+       // App: AppBottomTabStack,
+        [Screens.ADD_PRODUCT_LIST]: AddProductList
     },
 
 ));
