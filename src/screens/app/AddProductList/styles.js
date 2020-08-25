@@ -12,5 +12,6 @@ export const styles = StyleSheet.create({
         justifyContent:'center',
         left: 10,
 
+
     }
 });
