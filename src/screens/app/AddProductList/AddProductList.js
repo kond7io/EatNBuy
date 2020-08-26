@@ -1,14 +1,17 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {View, Text, Animated, Button, ImageBackground, Image} from "react-native";
+import {View, Text, Animated, Button, ImageBackground, Image, ScrollView} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-import {styles} from './styles';
-import EBSearchProduct from "../ProductMagazine/EBSearchProduct/EBSearchProduct";
-import {useFocusEffect} from "@react-navigation/native";
-import {colors} from "../../../constans/colors";
+import EBSearchProduct from "../../../components/EBSearchProduct/EBSearchProduct";
 import image from '../../../img/signIn/loginImage1.png';
+import EBProductList from "../../../components/EBProductList/EBProductList";
+import EBNotifications from "../../../components/EBNotifications/EBNotifications";
+
+import {colors} from "../../../constans/colors";
+import {styles} from './styles';
+import EBProductModal from "../../../components/EBProductModal/EBProductModal";
 
 const AddProductList = ({}) => {
+    const [modalVisible, setModalVisible] = useState(false);
 
     const [isAnimating, setIsAnimating] = useState(true);
     const hideSearch = useRef(new Animated.Value(-400));
@@ -38,25 +41,33 @@ const AddProductList = ({}) => {
     })
     return (
         <View style={{flex:1}}>
-            <View style={{flex: 0.7, flexDirection:'row'}}>
+            <View style={{flex: 0.5, flexDirection:'row'}}>
                 <Animated.View
-                    style={[styles.icon,{opacity: hideIcon.current, }]}>
+                    style={[styles.icon,{opacity: hideIcon.current,  }]}>
                     <Icon onPress={()=> isAnimating ? handleEffect() : null} name={'arrow-circle-right'} color={colors.theme} size={45}  />
                 </Animated.View>
                 <Animated.View
                     style={[styles.container, {left: hideSearch.current, opacity: showSearch.current}]}>
 
-                    <EBSearchProduct barcodeColor={'black'}/>
+                    <EBSearchProduct modalVisible={modalVisible} setModalVisible={setModalVisible} barcodeColor={'black'}/>
                 </Animated.View>
 
             </View>
 
             {isAnimating ?
-            <Animated.View style={{flex:2 ,alignItems: 'center',justifyContent:'space-evenly', opacity: hideIcon.current}}>
+            <Animated.View style={{flex:2, alignItems: 'center',justifyContent:'space-evenly', opacity: hideIcon.current}}>
                 <Image source={image} style={{ width: 270, height: 270 }}/>
                 <Text style={{marginBottom:100,fontSize: 18, color: colors.theme, fontWeight:'bold'}}>Kliknij ikonkę strzałki i stwórz nową listę</Text>
             </Animated.View>
-            : <Animated.View style={{flex:2 , opacity: showSearch.current}}></Animated.View>
+            : <Animated.View style={{flex:2, alignItems:'center',
+                    justifyContent:'center',opacity: showSearch.current}}>
+                    <ScrollView style={{flex:1,
+
+                        width:'100%',}}>
+                        <EBProductList />
+                        <EBProductModal setModalVisible={setModalVisible} modalVisible={modalVisible}/>
+                    </ScrollView>
+                </Animated.View>
 }
         </View>
     )

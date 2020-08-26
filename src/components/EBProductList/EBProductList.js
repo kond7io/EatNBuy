@@ -1,52 +1,55 @@
 import React,{useState} from 'react';
 import {View} from 'react-native';
-import Animated from 'react-native-reanimated';
+import EBCollapsibleView from "../../components/EBCollapsibleView/EBCollapsibleView";
+import EBCollapsibleItem from "../../components/EBCollapsibleView/EBCollapsibleItem/EBCollapsibleItem";
 
-import EBCollapsibleView from "../../../../components/EBCollapsibleView/EBCollapsibleView";
 import {styles} from './styles';
-import EBCollapsibleItem from "../../../../components/EBCollapsibleView/EBCollapsibleItem/EBCollapsibleItem";
 
 console.disableYellowBox = true;
 
 const productsList = [
     {category:'Nabiał',
+        icon: 'milk',
         data: [
             {product: 'mleko', company: 'Mlekovita', selected: false},
             {product: 'serek', company: 'Włoszczowa', selected: true},
             {product: 'jogurt', company: 'Bakoma', selected: true}
         ]},
-    {category: 'Napoje',
+    {category: 'Owoce',
+        icon: 'fruit_circle',
         data: [
-            {product: 'woda', company: 'Jurajska', selected: true},
-            {product: 'cola', company: 'Coca-Cola', selected: false},
-            {product: 'sok', company: 'Tymbark', selected: false},
-        ]},
-    {category: 'Słodycze',
-        data: [
-            {product: 'czekolada', company: 'Milka',selected: false},
-            {product: 'baton', company: 'Twix', selected: false},
+            {product: 'jabłko', company: '',selected: false},
+            {product: 'banan', company: '', selected: false},
             ]},
     {category: 'Słodycze',
+        icon: 'donut',
         data: [
             {product: 'czekolada', company: 'Milka',selected: false},
             {product: 'baton', company: 'Twix', selected: false},
         ]},
-    {category: 'Słodycze',
+    {category: 'Chemia',
+        icon: 'household',
         data: [
-            {product: 'czekolada', company: 'Milka',selected: false},
-            {product: 'baton', company: 'Twix', selected: false},
+            {product: 'płyn do wc', company: 'Domestos',selected: false},
+            {product: 'płyn do szyb', company: 'Ajax', selected: false},
         ]},
-    {category: 'Słodycze',
+    {category: 'Zwierzęta',
+        icon: 'pets',
         data: [
-            {product: 'czekolada', company: 'Milka',selected: false},
-            {product: 'baton', company: 'Twix', selected: false},
+            {product: 'karma dla kota', company: 'KitKat',selected: false},
+            {product: 'karma dla psa', company: 'Pedigree', selected: false},
         ]},
-
-
-    {category: 'Higiena',
+    {category: 'Dziecko',
+        icon: 'baby',
         data: [
-            {product: 'reczniki papierowe', company: 'Mola', selected: true},
-            {product: 'husteczki higieniczne', company: 'Fox', selected: false},
+            {product: 'pieluszki', company: 'Example',selected: false},
+            {product: 'puder', company: 'Example', selected: false},
+        ]},
+    {category: 'Warzywa',
+        icon: 'vegetables_circle',
+        data: [
+            {product: 'pomidor', company: '', selected: true},
+            {product: 'ogórek', company: '', selected: false},
         ]}];
 
 
@@ -62,7 +65,7 @@ const EBProductList = () => {
                     data = {item.data}
                     render={({data, visible})=> (
                         visible
-                            ? <EBCollapsibleItem data={data} visible={visible}/>
+                            ? <EBCollapsibleItem data={data}/>
                             : null
                         )}
                 />

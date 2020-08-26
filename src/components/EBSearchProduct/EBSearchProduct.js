@@ -7,7 +7,7 @@ import {styles} from './styles';
 
 console.disableYellowBox = true;
 
-const EBSearchProduct = ({barcodeColor}) => {
+const EBSearchProduct = ({modalVisible, setModalVisible,barcodeColor}) => {
     return (
                 <View style={styles.header}>
                     <View style={styles.searchInput}>
@@ -21,7 +21,9 @@ const EBSearchProduct = ({barcodeColor}) => {
                                 placeholderTextColor={'gray'}
                             />
                         </View>
-                        <TouchableOpacity style={styles.iconButton}>
+                        <TouchableOpacity style={styles.iconButton}
+                                          onPress={()=> setModalVisible(!modalVisible)}
+                        >
                             <Icon style={styles.icon} name={'plus'} color={'black'}/>
                         </TouchableOpacity>
                     </View>

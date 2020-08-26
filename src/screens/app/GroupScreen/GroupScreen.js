@@ -7,7 +7,7 @@ import {colors} from '../../../constans/colors';
 import addImage from '../../../img/groupScreen/add.png';
 import joinImage from '../../../img/groupScreen/join.png';
 import EBBellCounter from "../../../components/EBBellCounter/EBBellCounter";
-import EBNotifications from "../MainScreen/EBNotifications/EBNotifications";
+import EBNotifications from "../../../components/EBNotifications/EBNotifications";
 import {windowHeight, windowWidth} from "../../../constans/deviceDimension";
 
 console.disableYellowBox = true;
@@ -19,7 +19,7 @@ const GroupScreen = () => {
         {message: "Stwórz grupę i dodaj użytkowników", img: addImage, optional: "Tekst nr 1.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."},
         {message: "Dołącz do istniejącej grupy", img: joinImage, optional: "Tekst nr 2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."}];
 
-    const [notificationsVisible, useNotifications] = useState(false);
+    const [notificationsVisible, setNotifications] = useState(false);
 
     useEffect(()=>{
         
@@ -28,7 +28,7 @@ const GroupScreen = () => {
     return (
         <View style={styles.container}>
             <TouchableOpacity
-                onPress={()=> useNotifications(!notificationsVisible)}>
+                onPress={()=> setNotifications(!notificationsVisible)}>
                 <EBBellCounter
                     number={'3'}
                     iconColor={colors.theme}
@@ -50,7 +50,7 @@ const GroupScreen = () => {
 
             <EBNotifications
                 notificationsVisible={notificationsVisible}
-                useNotifications={useNotifications} />
+                setNotifications={setNotifications} />
         </View>
 
     )

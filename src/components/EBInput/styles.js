@@ -7,13 +7,8 @@ export const styles = StyleSheet.create({
     },
     label: {
         marginTop: -5,
-        color: 'white',
-    },
-    input: {
-        color: 'white',
     },
     NBIcon: {
-        color: "white",
         fontSize: 25
     },
     NBIconOff: {

@@ -6,7 +6,6 @@ import EBScrollList from './EBScrollList/EBScrollList';
 import {windowHeight} from '../../../constans/deviceDimension';
 
 import {styles} from './styles';
-import EBNotifications from './EBNotifications/EBNotifications';
 
 
 console.disableYellowBox = true;

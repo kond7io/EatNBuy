@@ -31,8 +31,6 @@ const EBCollapsibleHeader = ({category, data, visible, setVisible}) => {
                 </View>
                 <Icon name={visible ? 'remove' : 'add'} size={25} style={styles.icon}/>
             </TouchableOpacity>
-
-
         </View>
     )
 };

@@ -5,18 +5,18 @@ import {styles} from './styles';
 import PropTypes from 'prop-types';
 
 
-const EBInput = ({text, icon, isPassword, keyboardType, setValue}) => {
+const EBInput = ({style, text, icon, isPassword, keyboardType, textColor, iconColor, labelColor, setValue}) => {
 
    const [isSecure, setSecure] = useState(false);
 
     return (
-                <Item floatingLabel last style={styles.item}>
-                    <NBIcon style={styles.NBIcon} name={icon}/>
-                    <Label style={styles.label}>{text}</Label>
+                <Item floatingLabel last style={[styles.item, style]}>
+                    <NBIcon style={[styles.NBIcon, {color:iconColor}]} name={icon}/>
+                    <Label style={[styles.label,{color: labelColor}]}>{text}</Label>
                     <Input
                         disabled={false}
                         keyboardType={keyboardType}
-                        style={styles.input}
+                        style={{color: textColor}}
                         secureTextEntry={isPassword ? !isSecure : isSecure}
                         onChangeText={value => setValue(value)}
                     />
@@ -36,4 +36,10 @@ EBInput.propTypes = {
     icon: PropTypes.string.isRequired,
     isPassword: PropTypes.bool,
 };
+EBInput.defaultProps = {
+    textColor: 'white',
+    labelColor: 'white',
+    iconColor: 'white'
+}
+
 export default EBInput;

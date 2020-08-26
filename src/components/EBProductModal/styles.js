@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {windowHeight, windowWidth} from '../../../../constans/deviceDimension';
+import {windowHeight, windowWidth} from '../../constans/deviceDimension';
+import {colors} from "../../constans/colors";
 
 export const styles = StyleSheet.create({
     container: {
@@ -15,7 +16,7 @@ export const styles = StyleSheet.create({
         width: '90%',
         height: '80%',
         backgroundColor: "white",
-        borderRadius: 20,
+       // borderRadius: 20,
         borderWidth: 1,
         borderColor: 'gray',
         marginTop: windowHeight * 0.075
@@ -31,5 +32,5 @@ export const styles = StyleSheet.create({
         textAlign:'left',
         fontWeight: 'bold',
         opacity: 0.5
-    }
+    },
 });

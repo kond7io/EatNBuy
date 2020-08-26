@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {windowHeight, windowWidth} from '../../../../constans/deviceDimension';
+import {windowHeight, windowWidth} from '../../constans/deviceDimension';
 
 export const styles = StyleSheet.create({
     header: {

@@ -11,14 +11,14 @@ import EBBellCounter from '../../../../components/EBBellCounter/EBBellCounter';
 import {nameFormat} from '../../../../utils/nameFormat';
 import EBListButton from './EBListButton/EBListButton';
 import {colors} from "../../../../constans/colors";
-import EBNotifications from "../EBNotifications/EBNotifications";
+import EBNotifications from "../../../../components/EBNotifications/EBNotifications";
 
 console.disableYellowBox = true;
 const userName = nameFormat('Martyna')
 
 const EBHeader = ({headerY, number, groupName, navigateTarget}) => {
 
-    const [notificationsVisible, useNotifications] = useState(false);
+    const [notificationsVisible, setNotifications] = useState(false);
 
     return (
         <Animated.View
@@ -34,7 +34,7 @@ const EBHeader = ({headerY, number, groupName, navigateTarget}) => {
                     <Text
                         style={styles.groupName}>{groupName}</Text>
                     <TouchableOpacity
-                        onPress={()=> useNotifications(!notificationsVisible)}
+                        onPress={()=> setNotifications(!notificationsVisible)}
                     >
                     <EBBellCounter
                         number={number}
@@ -43,7 +43,7 @@ const EBHeader = ({headerY, number, groupName, navigateTarget}) => {
                         ctColor={colors.theme}
                     />
                     </TouchableOpacity>
-                    <EBNotifications useNotifications={useNotifications} notificationsVisible={notificationsVisible}/>
+                    <EBNotifications setNotifications={setNotifications} notificationsVisible={notificationsVisible}/>
                 </View>
                 <View
                     style={styles.about}>
