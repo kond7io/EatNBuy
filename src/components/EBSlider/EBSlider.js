@@ -5,6 +5,7 @@ import EBSlide from './EBSlide/EBSlide';
 import PropTypes from 'prop-types'
 
 import {styles} from './styles';
+import Screens from "../../navigation/Screens";
 
 const EBSlider = ({auto, loop, dotColor, activeDotColor, items, buttonsVisible, dotVisible}) => {
     return (
@@ -19,11 +20,12 @@ const EBSlider = ({auto, loop, dotColor, activeDotColor, items, buttonsVisible, 
                 dotColor={dotColor}
                 activeDotColor={activeDotColor}>
 
-                {items.map(({img, message, optional}) => {
+                {items.map(({img, message, optional, target}) => {
                         return <EBSlide
                             image={img}
                             message={message}
                             optionalText={optional ? optional : null}
+                            target={target}
                         />
                 })}
 

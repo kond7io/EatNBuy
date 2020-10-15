@@ -4,7 +4,6 @@ import {Alert, Modal, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {styles} from './styles'
-import EBInput from "../../EBInput/EBInput";
 import {Form, Icon as NBIcon, Input, Item, Label} from "native-base";
 
 const EBProductModalInput = ({labelName, textInput}) => {

@@ -9,6 +9,7 @@ import joinImage from '../../../img/groupScreen/join.png';
 import EBBellCounter from "../../../components/EBBellCounter/EBBellCounter";
 import EBNotifications from "../../../components/EBNotifications/EBNotifications";
 import {windowHeight, windowWidth} from "../../../constans/deviceDimension";
+import Screens from "../../../navigation/Screens";
 
 console.disableYellowBox = true;
 
@@ -16,8 +17,8 @@ const GroupScreen = () => {
     const top = windowHeight * 0.02;
     const right = windowWidth * 0.05;
     const items = [
-        {message: "Stwórz grupę i dodaj użytkowników", img: addImage, optional: "Tekst nr 1.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."},
-        {message: "Dołącz do istniejącej grupy", img: joinImage, optional: "Tekst nr 2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."}];
+        {target: Screens.ADD_GROUP, message: "Stwórz grupę i dodaj użytkowników", img: addImage, optional: "Tekst nr 1.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."},
+        {target: Screens.SELECT_GROUP, message: "Dołącz do istniejącej grupy", img: joinImage, optional: "Tekst nr 2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."}];
 
     const [notificationsVisible, setNotifications] = useState(false);
 

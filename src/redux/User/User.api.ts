@@ -16,14 +16,14 @@ firebase.initializeApp(firebaseConfig);
 
 
 
-export const userRegister = async (name: string, email: string, password: string) => {
+export const userRegisterApi = async (name: string, email: string, password: string) => {
     debugger;
     let response = await firebase.auth().createUserWithEmailAndPassword(email, password)
     debugger;
     return response;
 };
 
-export const userCreateBranch = async (name: string) => {
+export const userCreateBranchApi = async (name: string) => {
 
     let response = await firebase.database().ref('users' + '/' + firebase.auth().currentUser.uid).set({
         name: name,
@@ -32,7 +32,15 @@ export const userCreateBranch = async (name: string) => {
     return response;
 };
 
-export const userLogin = async (email: string, password: string) => {
+export const userLoginApi = async (email: string, password: string) => {
     let response = await firebase.auth().signInWithEmailAndPassword(email, password);
      return response;
+};
+
+export const userCreateGroupApi = async (groupName: string) => {
+    let response = await firebase.database().ref('users' + '/' + firebase.auth().currentUser.uid).update({
+        isGrouped: true,
+        groupName: groupName
+    });
+    return response;
 };

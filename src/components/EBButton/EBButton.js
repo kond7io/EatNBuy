@@ -11,11 +11,14 @@ import Screens from "../../navigation/Screens";
 import {getUserSignUpAction} from "../../redux/User/User.action";
 import {useDispatch} from "react-redux";
 
-const EBButton = ({title, icon, animation, target}) => {
+const EBButton = ({title, icon, animation, target, style}) => {
     const dispatch = useDispatch();
     return (
         animation ?
-        <Animatable.View animation='fadeInDown' delay={0}>
+        <Animatable.View
+            style={style}
+            animation='fadeInDown'
+            delay={0} >
            <TouchableOpacity style={styles.container}
                              onPress={()=> dispatch(target)}
            >

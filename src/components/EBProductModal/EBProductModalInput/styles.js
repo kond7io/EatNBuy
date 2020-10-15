@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         flexDirection:'row',
         margin: windowHeight * 0.0075,
-
         backgroundColor: 'red'
     },
 

@@ -19,6 +19,9 @@ import iconNavigator from "../utils/iconNavigator";
 import {colors} from "../constans/colors";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import AddProductList from "../screens/app/AddProductList/AddProductList";
+import AddGroup from "../screens/app/GroupScreen/AddGroup/AddGroup";
+import AddUserGroup from "../screens/app/GroupScreen/AddGroup/AddUserGroup/AddUserGroup";
+import SelectGroup from "../screens/app/GroupScreen/SelectGroup/SelectGroup";
 
 
 const AppBottomTabStack = createBottomTabNavigator({
@@ -61,19 +64,27 @@ const AppBottomTabStack = createBottomTabNavigator({
     );
 
 const AuthStack = createStackNavigator({
-        // [Screens.SIGN_IN]: SignIn,
+        [Screens.SIGN_IN]: SignIn,
         [Screens.SIGN_UP]: SignUp,
-        [Screens.GROUP_SCREEN]: GroupScreen,
 
     },
     {headerMode: 'none'}
     );
 
+const GroupStack = createStackNavigator({
+    [Screens.GROUP_SCREEN]: GroupScreen,
+    [Screens.ADD_GROUP]: AddGroup,
+},
+    {headerMode: 'none'}
+    );
 
 
 export default createAppContainer(createSwitchNavigator(
     {
-        // Auth: AuthStack,
+        //Auth: AuthStack,
+        Group: GroupStack,
+        [Screens.ADD_USER_GROUP]: AddUserGroup,
+        [Screens.SELECT_GROUP]: SelectGroup,
         App: AppBottomTabStack,
         [Screens.ADD_PRODUCT_LIST]: AddProductList
     },
