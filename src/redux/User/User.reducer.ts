@@ -1,4 +1,4 @@
-import {SIGN_IN, SIGN_UP} from "./User.action";
+import {CREATE_GROUP, SIGN_IN, SIGN_UP} from "./User.action";
 
 const INITIAL_STATE: any = {
     user: undefined,
@@ -47,7 +47,26 @@ export const UserReducer = (state = INITIAL_STATE, action: any) => {
                 ...state,
                 loading: false,
                 error: true
-            }
+            };
+        case CREATE_GROUP.pending:
+            return {
+                ...state,
+                loading: true,
+                error: false
+            };
+        case CREATE_GROUP.resolved:
+            return {
+                ...state,
+                loading: false,
+                error: false
+            };
+        case CREATE_GROUP.rejected:
+            return {
+                ...state,
+                loading: false,
+                error: false
+            };
+
         default:
             return state;
     }
