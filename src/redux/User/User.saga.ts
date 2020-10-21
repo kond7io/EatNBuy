@@ -1,14 +1,16 @@
 import {put, takeLatest, call, takeLeading} from 'redux-saga/effects';
 import {
-    getUserCreateGroupPending, getUserCreateGroupRejected, getUserCreateGroupResolved,
-    getUserSignInPending, getUserSignInRejected, getUserSignInResolved,
+    getUserSignInPending,
+    getUserSignInRejected,
+    getUserSignInResolved,
     getUserSignUpPending,
     getUserSignUpRejected,
-    getUserSignUpResolved, HANDLE_CREATE_GROUP, HANDLE_SIGN_IN,
+    getUserSignUpResolved,
+    HANDLE_SIGN_IN,
     HANDLE_SIGN_UP
 } from "./User.action";
 import {
-    userCreateBranchApi, userCreateGroupApi,
+    userCreateBranchApi,
     userLoginApi,
     userRegisterApi
 } from "./User.api";
@@ -16,7 +18,7 @@ import {
 import Navigation from '../../utils/Navigation';
 import Screens from '../../navigation/Screens';
 import {flashMessage} from "../../utils/flashMessage";
-import {User} from "../../types/User";
+import {RegisteredUser, User} from "../../types/User";
 
 
 function* signup(action: any) {
@@ -26,11 +28,11 @@ debugger;
     try {
         debugger;
         const { name, email, password } = action.payload;
-        const user = yield userRegisterApi(name, email, password);
+        const registeredUser: RegisteredUser = yield userRegisterApi(email, password);
         yield userCreateBranchApi(name);
-        yield put(getUserSignUpResolved(user))
+        yield put(getUserSignUpResolved(registeredUser));
         debugger;
-        flashMessage('Uwaga' ,'Resolved - register','success')
+        flashMessage('Rejestracja' ,'Konto pomyślnie utworzone','success')
         Navigation.navigate(Screens.SIGN_IN)
 
     } catch(error) {
@@ -41,13 +43,17 @@ debugger;
 }
 
 function* signin(action: any) {
+    debugger;
     yield put(getUserSignInPending());
-
+debugger;
     try {
+        debugger;
         const { email, password } = action.payload;
         const user: User  = yield userLoginApi(email, password);
+        debugger;
         yield put(getUserSignInResolved(user));
-        flashMessage('Uwaga' ,'Resolved - login','success');
+        debugger;
+        flashMessage('Logowanie' ,'Proces logowania przebiegł pomyślnie','success');
         Navigation.navigate(Screens.GROUP_SCREEN);
 
     } catch(error) {
@@ -56,24 +62,10 @@ function* signin(action: any) {
     }
 }
 
-function* creategroup(action: any) {
-    yield put(getUserCreateGroupPending());
 
-    try {
-        const {groupName} = action.payload;
-        yield userCreateGroupApi(groupName);
-        yield put(getUserCreateGroupResolved(groupName));
-        flashMessage('Grupa pomyślnie dodana','', 'success');
-         Navigation.navigate(Screens.ADD_USER_GROUP);
-
-    } catch (error){
-        yield put(getUserCreateGroupRejected(error));
-        flashMessage('Uwaga','Wystąpił błąd podczas tworzenia grupy','danger');
-    }
-}
 
 export default function* UserSaga () {
     yield takeLeading(HANDLE_SIGN_UP, signup);
     yield takeLeading(HANDLE_SIGN_IN, signin);
-    yield takeLeading(HANDLE_CREATE_GROUP, creategroup);
+
 }

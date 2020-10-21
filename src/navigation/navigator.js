@@ -11,13 +11,10 @@ import ProductMagazine from "../screens/app/ProductMagazine/ProductMagazine";
 import SignIn from "../screens/auth/SignIn/SignIn";
 import SignUp from "../screens/auth/SignUp/SignUp";
 
-import EBLoginForm from "../screens/auth/SignIn/EBLoginForm/EBLoginForm";
-import EBRegistrationForm from "../screens/auth/SignUp/EBRegistratrionForm/EBRegistrationForm";
 import StatisticsScreen from "../screens/app/StatisticsScreen/StatisticsScreen";
 import SettingsScreen from "../screens/app/SettingsScreen/SettingsScreen";
 import iconNavigator from "../utils/iconNavigator";
 import {colors} from "../constans/colors";
-import Icon from "react-native-vector-icons/FontAwesome5";
 import AddProductList from "../screens/app/AddProductList/AddProductList";
 import AddGroup from "../screens/app/GroupScreen/AddGroup/AddGroup";
 import AddUserGroup from "../screens/app/GroupScreen/AddGroup/AddUserGroup/AddUserGroup";
@@ -81,10 +78,10 @@ const GroupStack = createStackNavigator({
 
 export default createAppContainer(createSwitchNavigator(
     {
-        //Auth: AuthStack,
-        //Group: GroupStack,
-       // [Screens.ADD_USER_GROUP]: AddUserGroup,
-        //[Screens.SELECT_GROUP]: SelectGroup,
+        Auth: AuthStack,
+        Group: GroupStack,
+        [Screens.ADD_USER_GROUP]: AddUserGroup,
+        [Screens.SELECT_GROUP]: SelectGroup,
         App: AppBottomTabStack,
         [Screens.ADD_PRODUCT_LIST]: AddProductList
     },

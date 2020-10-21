@@ -1,8 +1,13 @@
 export interface User {
-    username: string
+    name: string;
+    email: string;
+    userKey: string;
+    groupKey: string;
 }
 
 export interface RegisteredUser {
-    email: string,
+    name: string;
+    email: string;
+    userKey: string;
 
 }

@@ -8,7 +8,7 @@ import {styles} from './styles';
 import PropTypes from 'prop-types';
 import EBButton from "../../../../components/EBButton/EBButton";
 import EBIcon from "../../../../components/EBIcon/EBIcon";
-import {getUserCreateGroup, getUserCreateGroupAction} from "../../../../redux/User/User.action";
+import {getUserCreateGroupAction} from "../../../../redux/Group/Group.action";
 
 const AddGroup = () => {
 

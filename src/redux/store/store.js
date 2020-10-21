@@ -5,15 +5,19 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import UserSaga from "../User/User.saga";
 import { UserReducer } from "../User/User.reducer";
+import {GroupReducer} from "../Group/Group.reducer";
+import GroupSaga from "../Group/Group.saga";
 
 
 const store = combineReducers({
-    user: UserReducer
+    user: UserReducer,
+    group: GroupReducer
 });
 
 export function * rootSaga() {
     yield all([
         call(UserSaga),
+        call(GroupSaga)
     ]);
 }
 

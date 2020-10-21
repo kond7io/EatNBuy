@@ -18,6 +18,7 @@ export const getUserSignUpAction = (name: string, email: string, password: strin
 
 export const SIGN_UP = createAsyncConsts('SIGN_UP');
 export const getUserSignUpPending = () => {
+    debugger;
     return {
         type: SIGN_UP.pending
     }
@@ -45,6 +46,7 @@ export const getUserSignUpRejected = (error) => {
 
 export const HANDLE_SIGN_IN = 'HANDLE_SIGN_IN';
 export const getUserSignInAction = (email: string, password: string) => {
+    debugger;
     return {
         type: HANDLE_SIGN_IN,
         payload: {
@@ -56,12 +58,14 @@ export const getUserSignInAction = (email: string, password: string) => {
 
 export const SIGN_IN = createAsyncConsts('SIGN_IN');
 export const getUserSignInPending = () => {
+    debugger;
     return {
         type: SIGN_IN.pending
     }
 };
 
-export const getUserSignInResolved = (user: User) => {
+export const getUserSignInResolved = (user: any) => {
+    debugger;
     return {
         type: SIGN_IN.resolved,
         payload: user
@@ -69,6 +73,7 @@ export const getUserSignInResolved = (user: User) => {
 };
 
 export const getUserSignInRejected = (error) => {
+    debugger;
     return {
         type: SIGN_IN.rejected,
         payload: error
@@ -76,38 +81,3 @@ export const getUserSignInRejected = (error) => {
 };
 
 /** SIGN IN END**/
-
-/** CREATE GROUP**/
-
-export const HANDLE_CREATE_GROUP = 'HANDLE_CREATE_GROUP';
-export const getUserCreateGroupAction = (groupName: string) => {
-    return {
-        type: HANDLE_CREATE_GROUP,
-        payload: {
-            groupName: groupName,
-        }
-    }
-};
-
-export const CREATE_GROUP = createAsyncConsts('CREATE_GROUP');
-export const getUserCreateGroupPending = () => {
-    return {
-        type: CREATE_GROUP.pending,
-    }
-};
-
-export const getUserCreateGroupResolved = (user: User) => {
-    return {
-        type: CREATE_GROUP.resolved,
-        payload: user
-    }
-};
-
-export const getUserCreateGroupRejected = (error) => {
-    return {
-        type: CREATE_GROUP.rejected,
-        payload: error
-    }
-};
-
-/** CREATE GROUP END**/
