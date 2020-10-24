@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import {Text} from 'react-native';
+import {Button, Text, TouchableHighlight, Modal, TouchableOpacity, View} from 'react-native';
 import Animated from 'react-native-reanimated';
+import Icon from "react-native-vector-icons/FontAwesome";
+
 import EBListItem from '../../../../components/EBListItem/EBListItem';
 
 import testIMG from '../../../../img/test/testIMG.jpg';
@@ -11,6 +13,7 @@ import testIMG5 from '../../../../img/test/testIMG5.jpg';
 import testIMG6 from '../../../../img/test/testIMG6.jpg';
 
 import {styles} from './styles'
+import EBShowList from "./EBShowList/EBShowList";
 
 console.disableYellowBox = true;
 
@@ -29,6 +32,10 @@ const items = [
 
 const EBScrollList = ({navbarHeight, scroll}) => {
 
+    const [isModal, setIsModal] = useState(false);
+    const [data, setData] = useState('');
+
+
     return (
             <Animated.ScrollView
                 scrollEventThrottle={1}
@@ -40,11 +47,15 @@ const EBScrollList = ({navbarHeight, scroll}) => {
                     [{nativeEvent: {contentOffset: {y: scroll}}}],
                     {useNativeDriver: true},
                 )}>
-                <Text style={styles.text}>Listy zakupów</Text>
-                {items.map((item) => {
-                    return <EBListItem items={item}/>
-                })}
 
+                    <Text style={styles.text}>Listy zakupów</Text>
+
+
+                {items.map((item) => {
+                    return <TouchableOpacity activeOpacity={0.8} onPress={()=>setIsModal(!isModal)}>
+                        <EBListItem  items={item}/>
+                    </TouchableOpacity>})}
+                <EBShowList  isModal={isModal} setIsModal={setIsModal}/>
             </Animated.ScrollView>
     )
 };

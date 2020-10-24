@@ -6,10 +6,6 @@ import EBItem from "./EBItem/EBItem";
 
 
 const EBCollapsibleItem = ({data}) => {
-    const hoverComponent = () => {
-        alert('asd')
-    }
-
     return (
             <FlatList
                 data={data}
