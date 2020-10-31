@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { useSelector } from "react-redux";
 import EBSlider from '../../../components/EBSlider/EBSlider';
 
 import {styles} from './styles';
@@ -10,24 +11,29 @@ import EBBellCounter from "../../../components/EBBellCounter/EBBellCounter";
 import EBNotifications from "../../../components/EBNotifications/EBNotifications";
 import {windowHeight, windowWidth} from "../../../constans/deviceDimension";
 import Screens from "../../../navigation/Screens";
+import {getUserIsGrouped} from "../../../redux/User/User.selector";
+import Navigation from "../../../utils/Navigation";
 
 console.disableYellowBox = true;
 
 const GroupScreen = () => {
+    const [notificationsVisible, setNotifications] = useState(false);
+    const isGrouped = useSelector(getUserIsGrouped);
+
     const top = windowHeight * 0.02;
     const right = windowWidth * 0.05;
+
     const items = [
         {target: Screens.ADD_GROUP, message: "Stwórz grupę i dodaj użytkowników", img: addImage, optional: "Tekst nr 1.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."},
         {target: Screens.SELECT_GROUP, message: "Dołącz do istniejącej grupy", img: joinImage, optional: "Tekst nr 2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis lobortis diam."}];
-
-    const [notificationsVisible, setNotifications] = useState(false);
 
     useEffect(()=>{
         
     })
 
     return (
-        <View style={styles.container}>
+        isGrouped ? <>{Navigation.navigate(Screens.MAIN_SCREEN)}</>
+        :<View style={styles.container}>
             <TouchableOpacity
                 onPress={()=> setNotifications(!notificationsVisible)}>
                 <EBBellCounter

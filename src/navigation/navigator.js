@@ -78,10 +78,10 @@ const GroupStack = createStackNavigator({
 
 export default createAppContainer(createSwitchNavigator(
     {
-        //Auth: AuthStack,
-        //Group: GroupStack,
-        //[Screens.ADD_USER_GROUP]: AddUserGroup,
-        //[Screens.SELECT_GROUP]: SelectGroup,
+       Auth: AuthStack,
+        Group: GroupStack,
+        [Screens.ADD_USER_GROUP]: AddUserGroup,
+        [Screens.SELECT_GROUP]: SelectGroup,
         App: AppBottomTabStack,
         [Screens.ADD_PRODUCT_LIST]: AddProductList
     },

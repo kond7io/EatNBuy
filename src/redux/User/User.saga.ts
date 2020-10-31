@@ -6,13 +6,18 @@ import {
     getUserSignUpPending,
     getUserSignUpRejected,
     getUserSignUpResolved,
+    getUserCreateGroupPending,
+    getUserCreateGroupRejected,
+    getUserCreateGroupResolved,
     HANDLE_SIGN_IN,
-    HANDLE_SIGN_UP
+    HANDLE_SIGN_UP,
+    HANDLE_CREATE_GROUP, getUserDetailsPending, getUserDetailsResolved, getUserDetailsRejected
 } from "./User.action";
 import {
     userCreateBranchApi,
     userLoginApi,
-    userRegisterApi
+    userRegisterApi,
+    groupCreateBranchApi, getUserApi,
 } from "./User.api";
 
 import Navigation from '../../utils/Navigation';
@@ -21,15 +26,17 @@ import {flashMessage} from "../../utils/flashMessage";
 import {RegisteredUser, User} from "../../types/User";
 
 
+
+
 function* signup(action: any) {
-    debugger;
     yield put(getUserSignUpPending());
-debugger;
+    debugger;
     try {
         debugger;
-        const { name, email, password } = action.payload;
+        const { name, email, password, profilImage } = action.payload;
         const registeredUser: RegisteredUser = yield userRegisterApi(email, password);
-        yield userCreateBranchApi(name);
+        debugger;
+        yield userCreateBranchApi(name, profilImage);
         yield put(getUserSignUpResolved(registeredUser));
         debugger;
         flashMessage('Rejestracja' ,'Konto pomyślnie utworzone','success')
@@ -43,22 +50,56 @@ debugger;
 }
 
 function* signin(action: any) {
-    debugger;
     yield put(getUserSignInPending());
-debugger;
+    debugger;
     try {
-        debugger;
         const { email, password } = action.payload;
+        debugger;
         const user: User  = yield userLoginApi(email, password);
         debugger;
         yield put(getUserSignInResolved(user));
+        yield call(getUserDetailsAfterLogin);
         debugger;
         flashMessage('Logowanie' ,'Proces logowania przebiegł pomyślnie','success');
         Navigation.navigate(Screens.GROUP_SCREEN);
 
     } catch(error) {
+        debugger;
         yield put(getUserSignInRejected(error));
         flashMessage('Uwaga' ,'Wystąpił błąd podczas logowania','danger');
+    }
+}
+
+function* creategroup(action: any) {
+    yield put(getUserCreateGroupPending());
+    debugger;
+    try {
+        const {groupName} = action.payload;
+        debugger;
+        yield groupCreateBranchApi(groupName);
+        yield put(getUserCreateGroupResolved(groupName));
+        debugger;
+        flashMessage('Gratulacje','Grupa pomyślnie utworzona', 'success');
+        Navigation.navigate(Screens.MAIN_SCREEN);
+
+    } catch (error){
+        debugger;
+        yield put(getUserCreateGroupRejected(error));
+        flashMessage('Uwaga','Wystąpił błąd podczas tworzenia grupy','danger');
+    }
+}
+
+export function* getUserDetailsAfterLogin(){
+    debugger;
+    yield put(getUserDetailsPending());
+    debugger;
+    try{
+        debugger;
+        const userDetails = yield getUserApi();
+        yield put(getUserDetailsResolved(userDetails));
+    } catch (error) {
+        debugger;
+        yield put(getUserDetailsRejected());
     }
 }
 
@@ -67,5 +108,7 @@ debugger;
 export default function* UserSaga () {
     yield takeLeading(HANDLE_SIGN_UP, signup);
     yield takeLeading(HANDLE_SIGN_IN, signin);
+    yield takeLeading(HANDLE_CREATE_GROUP, creategroup);
+
 
 }

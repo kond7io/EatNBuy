@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Image, Text, View, ImageBackground, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import avatar from '../../../../img/test/testIMG.jpg';
+import avatar from '../../../../img/signUp/avatar.png';
 import back from '../../../../img/mainScreen/background.jpg';
 import Animated from 'react-native-reanimated';
 
@@ -14,9 +14,8 @@ import {colors} from "../../../../constans/colors";
 import EBNotifications from "../../../../components/EBNotifications/EBNotifications";
 
 console.disableYellowBox = true;
-const userName = nameFormat('Martyna')
 
-const EBHeader = ({headerY, number, groupName, navigateTarget}) => {
+const EBHeader = ({headerY, number, groupName, name, profilImage}) => {
 
     const [notificationsVisible, setNotifications] = useState(false);
 
@@ -48,11 +47,11 @@ const EBHeader = ({headerY, number, groupName, navigateTarget}) => {
                 <View
                     style={styles.about}>
                     <Image
-                        source = {avatar}
+                        source = {profilImage? profilImage :avatar}
                         style={styles.image}
                     />
                     <Text
-                        style={styles.welcome}>Witaj, {userName}</Text>
+                        style={styles.welcome}>Witaj, {nameFormat(name)}</Text>
                     </View>
             </ImageBackground>
             <EBListButton />

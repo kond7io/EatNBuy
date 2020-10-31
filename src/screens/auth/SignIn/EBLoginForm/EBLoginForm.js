@@ -15,9 +15,8 @@ import {getUserSignInAction} from "../../../../redux/User/User.action";
 const EBLoginForm = () => {
 
     const [isAnimation, setAnimation] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-debugger;
+    const [email, setEmail] = useState('m@o2.pl');
+    const [password, setPassword] = useState('ewqewq');
     console.disableYellowBox = true;
     return (
         <Animatable.View

@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 import {styles} from './styles';
 import {useDispatch} from "react-redux";
 import {getUserSignUpAction} from "../../../../redux/User/User.action";
+import avatar from "../../../../img/signUp/avatar.png";
 
 const EBRegistrationForm = () => {
 
@@ -20,6 +21,8 @@ const EBRegistrationForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
+    const [profilImage, setProfilImage] = useState(avatar);
+
             console.disableYellowBox = true;
 
     return (
@@ -30,7 +33,7 @@ const EBRegistrationForm = () => {
             easing={'ease-in-out'}
             onAnimationEnd={() => setAnimation(true)}
         >
-            <EBImagePicker />
+            <EBImagePicker profilImage={profilImage} setProfilImage={setProfilImage} />
 
             <Form style={styles.form}>
                 <EBInput text='Imię' icon='person' isPassword={false} setValue={setName}/>
@@ -45,7 +48,7 @@ const EBRegistrationForm = () => {
                     icon='sign-in'
                     title='Załóż konto'
                     animation={isAnimation}
-                    target={getUserSignUpAction(name, email, password)}
+                    target={getUserSignUpAction(name,email, password, profilImage)}
                 />
             </Form>
         </Animatable.View>

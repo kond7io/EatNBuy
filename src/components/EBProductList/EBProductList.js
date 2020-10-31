@@ -56,7 +56,7 @@ const productsList = [
 const EBProductList = () => {
 
     const _renderCollapsible = () => {
-        debugger;
+
         const items = [];
         for (let item of productsList){
             items.push(

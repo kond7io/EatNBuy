@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ImagePicker from 'react-native-image-picker';
 
 import {styles} from './styles';
-import avatar from '../../img/signUp/avatar.png';
 
 const options = {
     title: 'Wybierz swoje zdjęcie',
@@ -14,9 +13,7 @@ const options = {
 
 };
 
-const EBImagePicker = () => {
-
-    const [filePath, useFilePath] = useState(avatar);
+const EBImagePicker = ({profilImage, setProfilImage}) => {
 
     function _uploadImage ()
     {
@@ -30,7 +27,7 @@ const EBImagePicker = () => {
                 console.log('User tapped custom button: ', response.customButton);
             } else {
                 const source = {uri: response.uri};
-                useFilePath(source);
+                setProfilImage(source);
             }
         });
     }
@@ -40,7 +37,7 @@ const EBImagePicker = () => {
             <Text style={styles.text}>Wybierz zdjęcie</Text>
             <View style={styles.container}>
 
-                <Image source = {filePath}
+                <Image source = {profilImage}
                        style={styles.image}
                 />
                 <Icon name={'camera'}  size={15} style={styles.icon} onPress={() => _uploadImage()}/>

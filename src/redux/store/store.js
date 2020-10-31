@@ -11,13 +11,13 @@ import GroupSaga from "../Group/Group.saga";
 
 const store = combineReducers({
     user: UserReducer,
-    group: GroupReducer
+   // group: GroupReducer
 });
 
 export function * rootSaga() {
     yield all([
         call(UserSaga),
-        call(GroupSaga)
+      //  call(GroupSaga)
     ]);
 }
 
